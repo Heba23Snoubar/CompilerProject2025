@@ -9,8 +9,8 @@ public abstract class HtmlElement extends Node {
     @Override
     public String toString() {
         return "HtmlElement{" +
-                "Name='" + Name + '\'' +
-                ", numberOfLine=" + numberOfLine +
+                "\nName='" + Name + '\'' +
+                "\n, numberOfLine=" + numberOfLine +
                 '}';
     }
 }

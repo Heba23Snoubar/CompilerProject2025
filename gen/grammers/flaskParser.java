@@ -1,4 +1,4 @@
-// Generated from C:/Users/Heba2005/OneDrive/سطح المكتب/compiler2/grammers/flaskParser.g4 by ANTLR 4.13.2
+// Generated from C:/Users/techrepair/IdeaProjects/compiler2/compiler2/grammers/flaskParser.g4 by ANTLR 4.13.2
 package grammers;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -116,18 +116,6 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ProgramContext extends ParserRuleContext {
-		public ProgramContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_program; }
-	 
-		public ProgramContext() { }
-		public void copyFrom(ProgramContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ProgramLabelContext extends ProgramContext {
 		public TerminalNode EOF() { return getToken(flaskParser.EOF, 0); }
 		public List<TerminalNode> NEWLINE() { return getTokens(flaskParser.NEWLINE); }
 		public TerminalNode NEWLINE(int i) {
@@ -139,18 +127,21 @@ public class flaskParser extends Parser {
 		public StatementContext statement(int i) {
 			return getRuleContext(StatementContext.class,i);
 		}
-		public ProgramLabelContext(ProgramContext ctx) { copyFrom(ctx); }
+		public ProgramContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_program; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterProgramLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterProgram(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitProgramLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitProgram(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitProgramLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitProgram(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -160,7 +151,6 @@ public class flaskParser extends Parser {
 		enterRule(_localctx, 0, RULE_program);
 		int _la;
 		try {
-			_localctx = new ProgramLabelContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(66);
@@ -223,53 +213,27 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class StatementContext extends ParserRuleContext {
+		public Simple_stmtContext simple_stmt() {
+			return getRuleContext(Simple_stmtContext.class,0);
+		}
+		public Compound_stmtContext compound_stmt() {
+			return getRuleContext(Compound_stmtContext.class,0);
+		}
 		public StatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_statement; }
-	 
-		public StatementContext() { }
-		public void copyFrom(StatementContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class StatementSimpleLabelContext extends StatementContext {
-		public Simple_stmtContext simple_stmt() {
-			return getRuleContext(Simple_stmtContext.class,0);
-		}
-		public StatementSimpleLabelContext(StatementContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterStatementSimpleLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterStatement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitStatementSimpleLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitStatement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitStatementSimpleLabel(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class StatementCompoundLabelContext extends StatementContext {
-		public Compound_stmtContext compound_stmt() {
-			return getRuleContext(Compound_stmtContext.class,0);
-		}
-		public StatementCompoundLabelContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterStatementCompoundLabel(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitStatementCompoundLabel(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitStatementCompoundLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitStatement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -293,7 +257,6 @@ public class flaskParser extends Parser {
 			case NUMBER:
 			case STRING:
 			case ID:
-				_localctx = new StatementSimpleLabelContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(71);
@@ -304,7 +267,6 @@ public class flaskParser extends Parser {
 			case IF:
 			case FOR:
 			case AT:
-				_localctx = new StatementCompoundLabelContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(72);
@@ -339,94 +301,94 @@ public class flaskParser extends Parser {
 		}
 	}
 	@SuppressWarnings("CheckReturnValue")
-	public static class SimpleReturnLabelContext extends Simple_stmtContext {
+	public static class ReturnStmtRuleContext extends Simple_stmtContext {
 		public ReturnStmtContext returnStmt() {
 			return getRuleContext(ReturnStmtContext.class,0);
 		}
 		public Stmt_endContext stmt_end() {
 			return getRuleContext(Stmt_endContext.class,0);
 		}
-		public SimpleReturnLabelContext(Simple_stmtContext ctx) { copyFrom(ctx); }
+		public ReturnStmtRuleContext(Simple_stmtContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterSimpleReturnLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterReturnStmtRule(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitSimpleReturnLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitReturnStmtRule(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitSimpleReturnLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitReturnStmtRule(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 	@SuppressWarnings("CheckReturnValue")
-	public static class SimpleExprLabelContext extends Simple_stmtContext {
-		public ExprStmtContext exprStmt() {
-			return getRuleContext(ExprStmtContext.class,0);
-		}
-		public Stmt_endContext stmt_end() {
-			return getRuleContext(Stmt_endContext.class,0);
-		}
-		public SimpleExprLabelContext(Simple_stmtContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterSimpleExprLabel(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitSimpleExprLabel(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitSimpleExprLabel(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class SimpleAssignLabelContext extends Simple_stmtContext {
-		public AssignStmtContext assignStmt() {
-			return getRuleContext(AssignStmtContext.class,0);
-		}
-		public Stmt_endContext stmt_end() {
-			return getRuleContext(Stmt_endContext.class,0);
-		}
-		public SimpleAssignLabelContext(Simple_stmtContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterSimpleAssignLabel(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitSimpleAssignLabel(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitSimpleAssignLabel(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class SimpleImportLabelContext extends Simple_stmtContext {
+	public static class ImportStmtRuleContext extends Simple_stmtContext {
 		public ImportStmtContext importStmt() {
 			return getRuleContext(ImportStmtContext.class,0);
 		}
 		public Stmt_endContext stmt_end() {
 			return getRuleContext(Stmt_endContext.class,0);
 		}
-		public SimpleImportLabelContext(Simple_stmtContext ctx) { copyFrom(ctx); }
+		public ImportStmtRuleContext(Simple_stmtContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterSimpleImportLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterImportStmtRule(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitSimpleImportLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitImportStmtRule(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitSimpleImportLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitImportStmtRule(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class AssignStmtRuleContext extends Simple_stmtContext {
+		public AssignStmtContext assignStmt() {
+			return getRuleContext(AssignStmtContext.class,0);
+		}
+		public Stmt_endContext stmt_end() {
+			return getRuleContext(Stmt_endContext.class,0);
+		}
+		public AssignStmtRuleContext(Simple_stmtContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterAssignStmtRule(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitAssignStmtRule(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitAssignStmtRule(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class ExpressionStmtRuleContext extends Simple_stmtContext {
+		public ExprStmtContext exprStmt() {
+			return getRuleContext(ExprStmtContext.class,0);
+		}
+		public Stmt_endContext stmt_end() {
+			return getRuleContext(Stmt_endContext.class,0);
+		}
+		public ExpressionStmtRuleContext(Simple_stmtContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterExpressionStmtRule(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitExpressionStmtRule(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitExpressionStmtRule(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -439,7 +401,7 @@ public class flaskParser extends Parser {
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
 			case 1:
-				_localctx = new SimpleImportLabelContext(_localctx);
+				_localctx = new ImportStmtRuleContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(75);
@@ -449,7 +411,7 @@ public class flaskParser extends Parser {
 				}
 				break;
 			case 2:
-				_localctx = new SimpleAssignLabelContext(_localctx);
+				_localctx = new AssignStmtRuleContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(78);
@@ -459,7 +421,7 @@ public class flaskParser extends Parser {
 				}
 				break;
 			case 3:
-				_localctx = new SimpleReturnLabelContext(_localctx);
+				_localctx = new ReturnStmtRuleContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
 				setState(81);
@@ -469,7 +431,7 @@ public class flaskParser extends Parser {
 				}
 				break;
 			case 4:
-				_localctx = new SimpleExprLabelContext(_localctx);
+				_localctx = new ExpressionStmtRuleContext(_localctx);
 				enterOuterAlt(_localctx, 4);
 				{
 				setState(84);
@@ -585,62 +547,62 @@ public class flaskParser extends Parser {
 		}
 	}
 	@SuppressWarnings("CheckReturnValue")
-	public static class CompoundFunctionLabelContext extends Compound_stmtContext {
-		public FunctionDefContext functionDef() {
-			return getRuleContext(FunctionDefContext.class,0);
-		}
-		public CompoundFunctionLabelContext(Compound_stmtContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterCompoundFunctionLabel(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitCompoundFunctionLabel(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitCompoundFunctionLabel(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class CompoundIfLabelContext extends Compound_stmtContext {
+	public static class IfStmtRuleContext extends Compound_stmtContext {
 		public IfStmtContext ifStmt() {
 			return getRuleContext(IfStmtContext.class,0);
 		}
-		public CompoundIfLabelContext(Compound_stmtContext ctx) { copyFrom(ctx); }
+		public IfStmtRuleContext(Compound_stmtContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterCompoundIfLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterIfStmtRule(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitCompoundIfLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitIfStmtRule(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitCompoundIfLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitIfStmtRule(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 	@SuppressWarnings("CheckReturnValue")
-	public static class CompoundForLabelContext extends Compound_stmtContext {
+	public static class ForStmtRuleContext extends Compound_stmtContext {
 		public ForStmtContext forStmt() {
 			return getRuleContext(ForStmtContext.class,0);
 		}
-		public CompoundForLabelContext(Compound_stmtContext ctx) { copyFrom(ctx); }
+		public ForStmtRuleContext(Compound_stmtContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterCompoundForLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterForStmtRule(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitCompoundForLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitForStmtRule(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitCompoundForLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitForStmtRule(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class FunctionDefRuleContext extends Compound_stmtContext {
+		public FunctionDefContext functionDef() {
+			return getRuleContext(FunctionDefContext.class,0);
+		}
+		public FunctionDefRuleContext(Compound_stmtContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterFunctionDefRule(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitFunctionDefRule(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitFunctionDefRule(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -654,7 +616,7 @@ public class flaskParser extends Parser {
 			switch (_input.LA(1)) {
 			case DEF:
 			case AT:
-				_localctx = new CompoundFunctionLabelContext(_localctx);
+				_localctx = new FunctionDefRuleContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(97);
@@ -662,7 +624,7 @@ public class flaskParser extends Parser {
 				}
 				break;
 			case IF:
-				_localctx = new CompoundIfLabelContext(_localctx);
+				_localctx = new IfStmtRuleContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(98);
@@ -670,7 +632,7 @@ public class flaskParser extends Parser {
 				}
 				break;
 			case FOR:
-				_localctx = new CompoundForLabelContext(_localctx);
+				_localctx = new ForStmtRuleContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
 				setState(99);
@@ -694,39 +656,6 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ImportStmtContext extends ParserRuleContext {
-		public ImportStmtContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_importStmt; }
-	 
-		public ImportStmtContext() { }
-		public void copyFrom(ImportStmtContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ImportSimpleLabelContext extends ImportStmtContext {
-		public TerminalNode IMPORT() { return getToken(flaskParser.IMPORT, 0); }
-		public Dotted_nameContext dotted_name() {
-			return getRuleContext(Dotted_nameContext.class,0);
-		}
-		public ImportSimpleLabelContext(ImportStmtContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterImportSimpleLabel(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitImportSimpleLabel(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitImportSimpleLabel(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ImportFromLabelContext extends ImportStmtContext {
 		public TerminalNode FROM() { return getToken(flaskParser.FROM, 0); }
 		public Dotted_nameContext dotted_name() {
 			return getRuleContext(Dotted_nameContext.class,0);
@@ -735,18 +664,21 @@ public class flaskParser extends Parser {
 		public ImportListContext importList() {
 			return getRuleContext(ImportListContext.class,0);
 		}
-		public ImportFromLabelContext(ImportStmtContext ctx) { copyFrom(ctx); }
+		public ImportStmtContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_importStmt; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterImportFromLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterImportStmt(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitImportFromLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitImportStmt(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitImportFromLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitImportStmt(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -759,7 +691,6 @@ public class flaskParser extends Parser {
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case FROM:
-				_localctx = new ImportFromLabelContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(102);
@@ -773,7 +704,6 @@ public class flaskParser extends Parser {
 				}
 				break;
 			case IMPORT:
-				_localctx = new ImportSimpleLabelContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(107);
@@ -799,18 +729,6 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ImportListContext extends ParserRuleContext {
-		public ImportListContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_importList; }
-	 
-		public ImportListContext() { }
-		public void copyFrom(ImportListContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ImportListLabelContext extends ImportListContext {
 		public List<ImportItemContext> importItem() {
 			return getRuleContexts(ImportItemContext.class);
 		}
@@ -821,18 +739,21 @@ public class flaskParser extends Parser {
 		public TerminalNode COMMA(int i) {
 			return getToken(flaskParser.COMMA, i);
 		}
-		public ImportListLabelContext(ImportListContext ctx) { copyFrom(ctx); }
+		public ImportListContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_importList; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterImportListLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterImportList(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitImportListLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitImportList(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitImportListLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitImportList(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -842,7 +763,6 @@ public class flaskParser extends Parser {
 		enterRule(_localctx, 12, RULE_importList);
 		int _la;
 		try {
-			_localctx = new ImportListLabelContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(111);
@@ -878,35 +798,26 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ImportItemContext extends ParserRuleContext {
-		public ImportItemContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_importItem; }
-	 
-		public ImportItemContext() { }
-		public void copyFrom(ImportItemContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ImportItemLabelContext extends ImportItemContext {
 		public List<TerminalNode> ID() { return getTokens(flaskParser.ID); }
 		public TerminalNode ID(int i) {
 			return getToken(flaskParser.ID, i);
 		}
 		public TerminalNode AS() { return getToken(flaskParser.AS, 0); }
-		public ImportItemLabelContext(ImportItemContext ctx) { copyFrom(ctx); }
+		public ImportItemContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_importItem; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterImportItemLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterImportItem(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitImportItemLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitImportItem(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitImportItemLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitImportItem(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -916,7 +827,6 @@ public class flaskParser extends Parser {
 		enterRule(_localctx, 14, RULE_importItem);
 		int _la;
 		try {
-			_localctx = new ImportItemLabelContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(119);
@@ -948,18 +858,6 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class FunctionDefContext extends ParserRuleContext {
-		public FunctionDefContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_functionDef; }
-	 
-		public FunctionDefContext() { }
-		public void copyFrom(FunctionDefContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class FunctionDefLabelContext extends FunctionDefContext {
 		public TerminalNode DEF() { return getToken(flaskParser.DEF, 0); }
 		public TerminalNode ID() { return getToken(flaskParser.ID, 0); }
 		public TerminalNode LPAREN() { return getToken(flaskParser.LPAREN, 0); }
@@ -977,18 +875,21 @@ public class flaskParser extends Parser {
 		public ParamListContext paramList() {
 			return getRuleContext(ParamListContext.class,0);
 		}
-		public FunctionDefLabelContext(FunctionDefContext ctx) { copyFrom(ctx); }
+		public FunctionDefContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_functionDef; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterFunctionDefLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterFunctionDef(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitFunctionDefLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitFunctionDef(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitFunctionDefLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitFunctionDef(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -998,7 +899,6 @@ public class flaskParser extends Parser {
 		enterRule(_localctx, 16, RULE_functionDef);
 		int _la;
 		try {
-			_localctx = new FunctionDefLabelContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(127);
@@ -1052,18 +952,6 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class DecoratorContext extends ParserRuleContext {
-		public DecoratorContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_decorator; }
-	 
-		public DecoratorContext() { }
-		public void copyFrom(DecoratorContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class DecoratorLabelContext extends DecoratorContext {
 		public TerminalNode AT() { return getToken(flaskParser.AT, 0); }
 		public Dotted_nameContext dotted_name() {
 			return getRuleContext(Dotted_nameContext.class,0);
@@ -1074,18 +962,21 @@ public class flaskParser extends Parser {
 		public ArgumentListContext argumentList() {
 			return getRuleContext(ArgumentListContext.class,0);
 		}
-		public DecoratorLabelContext(DecoratorContext ctx) { copyFrom(ctx); }
+		public DecoratorContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_decorator; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterDecoratorLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterDecorator(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitDecoratorLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitDecorator(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitDecoratorLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitDecorator(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1095,7 +986,6 @@ public class flaskParser extends Parser {
 		enterRule(_localctx, 18, RULE_decorator);
 		int _la;
 		try {
-			_localctx = new DecoratorLabelContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(140);
@@ -1141,18 +1031,6 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ParamListContext extends ParserRuleContext {
-		public ParamListContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_paramList; }
-	 
-		public ParamListContext() { }
-		public void copyFrom(ParamListContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ParamListLabelContext extends ParamListContext {
 		public List<TerminalNode> ID() { return getTokens(flaskParser.ID); }
 		public TerminalNode ID(int i) {
 			return getToken(flaskParser.ID, i);
@@ -1161,18 +1039,21 @@ public class flaskParser extends Parser {
 		public TerminalNode COMMA(int i) {
 			return getToken(flaskParser.COMMA, i);
 		}
-		public ParamListLabelContext(ParamListContext ctx) { copyFrom(ctx); }
+		public ParamListContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_paramList; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterParamListLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterParamList(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitParamListLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitParamList(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitParamListLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitParamList(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1182,7 +1063,6 @@ public class flaskParser extends Parser {
 		enterRule(_localctx, 20, RULE_paramList);
 		int _la;
 		try {
-			_localctx = new ParamListLabelContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(151);
@@ -1218,18 +1098,6 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class BlockContext extends ParserRuleContext {
-		public BlockContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_block; }
-	 
-		public BlockContext() { }
-		public void copyFrom(BlockContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class BlockLabelContext extends BlockContext {
 		public List<TerminalNode> NEWLINE() { return getTokens(flaskParser.NEWLINE); }
 		public TerminalNode NEWLINE(int i) {
 			return getToken(flaskParser.NEWLINE, i);
@@ -1242,18 +1110,21 @@ public class flaskParser extends Parser {
 		public StatementContext statement(int i) {
 			return getRuleContext(StatementContext.class,i);
 		}
-		public BlockLabelContext(BlockContext ctx) { copyFrom(ctx); }
+		public BlockContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_block; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterBlockLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterBlock(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitBlockLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitBlock(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitBlockLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitBlock(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1264,7 +1135,6 @@ public class flaskParser extends Parser {
 		int _la;
 		try {
 			int _alt;
-			_localctx = new BlockLabelContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(159);
@@ -1380,18 +1250,6 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class IfStmtContext extends ParserRuleContext {
-		public IfStmtContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_ifStmt; }
-	 
-		public IfStmtContext() { }
-		public void copyFrom(IfStmtContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class IfStmtLabelContext extends IfStmtContext {
 		public TerminalNode IF() { return getToken(flaskParser.IF, 0); }
 		public List<ExpressionContext> expression() {
 			return getRuleContexts(ExpressionContext.class);
@@ -1414,18 +1272,21 @@ public class flaskParser extends Parser {
 			return getToken(flaskParser.ELIF, i);
 		}
 		public TerminalNode ELSE() { return getToken(flaskParser.ELSE, 0); }
-		public IfStmtLabelContext(IfStmtContext ctx) { copyFrom(ctx); }
+		public IfStmtContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_ifStmt; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterIfStmtLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterIfStmt(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitIfStmtLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitIfStmt(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitIfStmtLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitIfStmt(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1435,7 +1296,6 @@ public class flaskParser extends Parser {
 		enterRule(_localctx, 24, RULE_ifStmt);
 		try {
 			int _alt;
-			_localctx = new IfStmtLabelContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(187);
@@ -1497,18 +1357,6 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ForStmtContext extends ParserRuleContext {
-		public ForStmtContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_forStmt; }
-	 
-		public ForStmtContext() { }
-		public void copyFrom(ForStmtContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ForStmtLabelContext extends ForStmtContext {
 		public TerminalNode FOR() { return getToken(flaskParser.FOR, 0); }
 		public TerminalNode ID() { return getToken(flaskParser.ID, 0); }
 		public TerminalNode IN() { return getToken(flaskParser.IN, 0); }
@@ -1519,18 +1367,21 @@ public class flaskParser extends Parser {
 		public BlockContext block() {
 			return getRuleContext(BlockContext.class,0);
 		}
-		public ForStmtLabelContext(ForStmtContext ctx) { copyFrom(ctx); }
+		public ForStmtContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_forStmt; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterForStmtLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterForStmt(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitForStmtLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitForStmt(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitForStmtLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitForStmt(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1539,7 +1390,6 @@ public class flaskParser extends Parser {
 		ForStmtContext _localctx = new ForStmtContext(_ctx, getState());
 		enterRule(_localctx, 26, RULE_forStmt);
 		try {
-			_localctx = new ForStmtLabelContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(206);
@@ -1569,18 +1419,6 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class AssignStmtContext extends ParserRuleContext {
-		public AssignStmtContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_assignStmt; }
-	 
-		public AssignStmtContext() { }
-		public void copyFrom(AssignStmtContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class AssignStmtLabelContext extends AssignStmtContext {
 		public List<ExpressionContext> expression() {
 			return getRuleContexts(ExpressionContext.class);
 		}
@@ -1588,18 +1426,21 @@ public class flaskParser extends Parser {
 			return getRuleContext(ExpressionContext.class,i);
 		}
 		public TerminalNode ASSIGN() { return getToken(flaskParser.ASSIGN, 0); }
-		public AssignStmtLabelContext(AssignStmtContext ctx) { copyFrom(ctx); }
+		public AssignStmtContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_assignStmt; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterAssignStmtLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterAssignStmt(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitAssignStmtLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitAssignStmt(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitAssignStmtLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitAssignStmt(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1608,7 +1449,6 @@ public class flaskParser extends Parser {
 		AssignStmtContext _localctx = new AssignStmtContext(_ctx, getState());
 		enterRule(_localctx, 28, RULE_assignStmt);
 		try {
-			_localctx = new AssignStmtLabelContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(213);
@@ -1632,36 +1472,6 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ReturnStmtContext extends ParserRuleContext {
-		public ReturnStmtContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_returnStmt; }
-	 
-		public ReturnStmtContext() { }
-		public void copyFrom(ReturnStmtContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ReturnStmtEmptyLabelContext extends ReturnStmtContext {
-		public TerminalNode RETURN() { return getToken(flaskParser.RETURN, 0); }
-		public ReturnStmtEmptyLabelContext(ReturnStmtContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterReturnStmtEmptyLabel(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitReturnStmtEmptyLabel(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitReturnStmtEmptyLabel(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ReturnStmtLabelContext extends ReturnStmtContext {
 		public TerminalNode RETURN() { return getToken(flaskParser.RETURN, 0); }
 		public List<ExpressionContext> expression() {
 			return getRuleContexts(ExpressionContext.class);
@@ -1673,18 +1483,21 @@ public class flaskParser extends Parser {
 		public TerminalNode COMMA(int i) {
 			return getToken(flaskParser.COMMA, i);
 		}
-		public ReturnStmtLabelContext(ReturnStmtContext ctx) { copyFrom(ctx); }
+		public ReturnStmtContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_returnStmt; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterReturnStmtLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterReturnStmt(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitReturnStmtLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitReturnStmt(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitReturnStmtLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitReturnStmt(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1699,7 +1512,6 @@ public class flaskParser extends Parser {
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,24,_ctx) ) {
 			case 1:
-				_localctx = new ReturnStmtLabelContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(217);
@@ -1737,7 +1549,6 @@ public class flaskParser extends Parser {
 				}
 				break;
 			case 2:
-				_localctx = new ReturnStmtEmptyLabelContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(229);
@@ -1759,33 +1570,24 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ExprStmtContext extends ParserRuleContext {
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
 		public ExprStmtContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_exprStmt; }
-	 
-		public ExprStmtContext() { }
-		public void copyFrom(ExprStmtContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ExprStmtLabelContext extends ExprStmtContext {
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public ExprStmtLabelContext(ExprStmtContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterExprStmtLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterExprStmt(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitExprStmtLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitExprStmt(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitExprStmtLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitExprStmt(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1794,7 +1596,6 @@ public class flaskParser extends Parser {
 		ExprStmtContext _localctx = new ExprStmtContext(_ctx, getState());
 		enterRule(_localctx, 32, RULE_exprStmt);
 		try {
-			_localctx = new ExprStmtLabelContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(232);
@@ -1814,18 +1615,6 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ExpressionContext extends ParserRuleContext {
-		public ExpressionContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_expression; }
-	 
-		public ExpressionContext() { }
-		public void copyFrom(ExpressionContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ExpressionLabelContext extends ExpressionContext {
 		public List<ComparisonContext> comparison() {
 			return getRuleContexts(ComparisonContext.class);
 		}
@@ -1836,18 +1625,21 @@ public class flaskParser extends Parser {
 		public TerminalNode COMMA(int i) {
 			return getToken(flaskParser.COMMA, i);
 		}
-		public ExpressionLabelContext(ExpressionContext ctx) { copyFrom(ctx); }
+		public ExpressionContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_expression; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterExpressionLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterExpression(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitExpressionLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitExpression(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitExpressionLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitExpression(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1857,7 +1649,6 @@ public class flaskParser extends Parser {
 		enterRule(_localctx, 34, RULE_expression);
 		try {
 			int _alt;
-			_localctx = new ExpressionLabelContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(234);
@@ -1905,18 +1696,6 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ComparisonContext extends ParserRuleContext {
-		public ComparisonContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_comparison; }
-	 
-		public ComparisonContext() { }
-		public void copyFrom(ComparisonContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ComparisonLabelContext extends ComparisonContext {
 		public List<Arith_exprContext> arith_expr() {
 			return getRuleContexts(Arith_exprContext.class);
 		}
@@ -1951,18 +1730,21 @@ public class flaskParser extends Parser {
 		public TerminalNode ASSIGN(int i) {
 			return getToken(flaskParser.ASSIGN, i);
 		}
-		public ComparisonLabelContext(ComparisonContext ctx) { copyFrom(ctx); }
+		public ComparisonContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_comparison; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterComparisonLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterComparison(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitComparisonLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitComparison(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitComparisonLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitComparison(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1972,7 +1754,6 @@ public class flaskParser extends Parser {
 		enterRule(_localctx, 36, RULE_comparison);
 		try {
 			int _alt;
-			_localctx = new ComparisonLabelContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(245);
@@ -2060,18 +1841,6 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class Arith_exprContext extends ParserRuleContext {
-		public Arith_exprContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_arith_expr; }
-	 
-		public Arith_exprContext() { }
-		public void copyFrom(Arith_exprContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ArithExprLabelContext extends Arith_exprContext {
 		public List<TermContext> term() {
 			return getRuleContexts(TermContext.class);
 		}
@@ -2086,18 +1855,21 @@ public class flaskParser extends Parser {
 		public TerminalNode MINUS(int i) {
 			return getToken(flaskParser.MINUS, i);
 		}
-		public ArithExprLabelContext(Arith_exprContext ctx) { copyFrom(ctx); }
+		public Arith_exprContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_arith_expr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterArithExprLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterArith_expr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitArithExprLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitArith_expr(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitArithExprLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitArith_expr(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2107,7 +1879,6 @@ public class flaskParser extends Parser {
 		enterRule(_localctx, 38, RULE_arith_expr);
 		int _la;
 		try {
-			_localctx = new ArithExprLabelContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(262);
@@ -2151,18 +1922,6 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class TermContext extends ParserRuleContext {
-		public TermContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_term; }
-	 
-		public TermContext() { }
-		public void copyFrom(TermContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class TermLabelContext extends TermContext {
 		public List<FactorContext> factor() {
 			return getRuleContexts(FactorContext.class);
 		}
@@ -2177,18 +1936,21 @@ public class flaskParser extends Parser {
 		public TerminalNode DIV(int i) {
 			return getToken(flaskParser.DIV, i);
 		}
-		public TermLabelContext(TermContext ctx) { copyFrom(ctx); }
+		public TermContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_term; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterTermLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterTerm(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitTermLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitTerm(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitTermLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitTerm(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2198,7 +1960,6 @@ public class flaskParser extends Parser {
 		enterRule(_localctx, 40, RULE_term);
 		int _la;
 		try {
-			_localctx = new TermLabelContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(270);
@@ -2242,18 +2003,6 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class FactorContext extends ParserRuleContext {
-		public FactorContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_factor; }
-	 
-		public FactorContext() { }
-		public void copyFrom(FactorContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class FactorLabelContext extends FactorContext {
 		public PrimaryContext primary() {
 			return getRuleContext(PrimaryContext.class,0);
 		}
@@ -2263,18 +2012,21 @@ public class flaskParser extends Parser {
 		public TrailerContext trailer(int i) {
 			return getRuleContext(TrailerContext.class,i);
 		}
-		public FactorLabelContext(FactorContext ctx) { copyFrom(ctx); }
+		public FactorContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_factor; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterFactorLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterFactor(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitFactorLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitFactor(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitFactorLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitFactor(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2284,7 +2036,6 @@ public class flaskParser extends Parser {
 		enterRule(_localctx, 42, RULE_factor);
 		int _la;
 		try {
-			_localctx = new FactorLabelContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(278);
@@ -2329,172 +2080,172 @@ public class flaskParser extends Parser {
 		}
 	}
 	@SuppressWarnings("CheckReturnValue")
-	public static class PrimaryStringLabelContext extends PrimaryContext {
-		public TerminalNode STRING() { return getToken(flaskParser.STRING, 0); }
-		public PrimaryStringLabelContext(PrimaryContext ctx) { copyFrom(ctx); }
+	public static class ListPrimaryContext extends PrimaryContext {
+		public ListLiteralContext listLiteral() {
+			return getRuleContext(ListLiteralContext.class,0);
+		}
+		public ListPrimaryContext(PrimaryContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterPrimaryStringLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterListPrimary(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitPrimaryStringLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitListPrimary(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitPrimaryStringLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitListPrimary(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 	@SuppressWarnings("CheckReturnValue")
-	public static class PrimaryFalseLabelContext extends PrimaryContext {
-		public TerminalNode FALSE() { return getToken(flaskParser.FALSE, 0); }
-		public PrimaryFalseLabelContext(PrimaryContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterPrimaryFalseLabel(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitPrimaryFalseLabel(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitPrimaryFalseLabel(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class PrimaryIdLabelContext extends PrimaryContext {
+	public static class IdentifierPrimaryContext extends PrimaryContext {
 		public TerminalNode ID() { return getToken(flaskParser.ID, 0); }
-		public PrimaryIdLabelContext(PrimaryContext ctx) { copyFrom(ctx); }
+		public IdentifierPrimaryContext(PrimaryContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterPrimaryIdLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterIdentifierPrimary(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitPrimaryIdLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitIdentifierPrimary(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitPrimaryIdLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitIdentifierPrimary(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 	@SuppressWarnings("CheckReturnValue")
-	public static class PrimaryParenLabelContext extends PrimaryContext {
+	public static class ParenPrimaryContext extends PrimaryContext {
 		public TerminalNode LPAREN() { return getToken(flaskParser.LPAREN, 0); }
 		public TerminalNode RPAREN() { return getToken(flaskParser.RPAREN, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
-		public PrimaryParenLabelContext(PrimaryContext ctx) { copyFrom(ctx); }
+		public ParenPrimaryContext(PrimaryContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterPrimaryParenLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterParenPrimary(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitPrimaryParenLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitParenPrimary(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitPrimaryParenLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitParenPrimary(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 	@SuppressWarnings("CheckReturnValue")
-	public static class PrimaryNumberLabelContext extends PrimaryContext {
-		public TerminalNode NUMBER() { return getToken(flaskParser.NUMBER, 0); }
-		public PrimaryNumberLabelContext(PrimaryContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterPrimaryNumberLabel(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitPrimaryNumberLabel(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitPrimaryNumberLabel(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class PrimaryListLabelContext extends PrimaryContext {
-		public ListLiteralContext listLiteral() {
-			return getRuleContext(ListLiteralContext.class,0);
-		}
-		public PrimaryListLabelContext(PrimaryContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterPrimaryListLabel(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitPrimaryListLabel(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitPrimaryListLabel(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class PrimaryDictLabelContext extends PrimaryContext {
+	public static class DictPrimaryContext extends PrimaryContext {
 		public DictLiteralContext dictLiteral() {
 			return getRuleContext(DictLiteralContext.class,0);
 		}
-		public PrimaryDictLabelContext(PrimaryContext ctx) { copyFrom(ctx); }
+		public DictPrimaryContext(PrimaryContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterPrimaryDictLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterDictPrimary(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitPrimaryDictLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitDictPrimary(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitPrimaryDictLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitDictPrimary(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 	@SuppressWarnings("CheckReturnValue")
-	public static class PrimaryTrueLabelContext extends PrimaryContext {
-		public TerminalNode TRUE() { return getToken(flaskParser.TRUE, 0); }
-		public PrimaryTrueLabelContext(PrimaryContext ctx) { copyFrom(ctx); }
+	public static class StringPrimaryContext extends PrimaryContext {
+		public TerminalNode STRING() { return getToken(flaskParser.STRING, 0); }
+		public StringPrimaryContext(PrimaryContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterPrimaryTrueLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterStringPrimary(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitPrimaryTrueLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitStringPrimary(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitPrimaryTrueLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitStringPrimary(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 	@SuppressWarnings("CheckReturnValue")
-	public static class PrimaryNoneLabelContext extends PrimaryContext {
+	public static class FalsePrimaryContext extends PrimaryContext {
+		public TerminalNode FALSE() { return getToken(flaskParser.FALSE, 0); }
+		public FalsePrimaryContext(PrimaryContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterFalsePrimary(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitFalsePrimary(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitFalsePrimary(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class NonePrimaryContext extends PrimaryContext {
 		public TerminalNode NONE() { return getToken(flaskParser.NONE, 0); }
-		public PrimaryNoneLabelContext(PrimaryContext ctx) { copyFrom(ctx); }
+		public NonePrimaryContext(PrimaryContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterPrimaryNoneLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterNonePrimary(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitPrimaryNoneLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitNonePrimary(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitPrimaryNoneLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitNonePrimary(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class TruePrimaryContext extends PrimaryContext {
+		public TerminalNode TRUE() { return getToken(flaskParser.TRUE, 0); }
+		public TruePrimaryContext(PrimaryContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterTruePrimary(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitTruePrimary(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitTruePrimary(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class NumberPrimaryContext extends PrimaryContext {
+		public TerminalNode NUMBER() { return getToken(flaskParser.NUMBER, 0); }
+		public NumberPrimaryContext(PrimaryContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterNumberPrimary(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitNumberPrimary(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitNumberPrimary(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2508,7 +2259,7 @@ public class flaskParser extends Parser {
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case ID:
-				_localctx = new PrimaryIdLabelContext(_localctx);
+				_localctx = new IdentifierPrimaryContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(285);
@@ -2516,7 +2267,7 @@ public class flaskParser extends Parser {
 				}
 				break;
 			case NUMBER:
-				_localctx = new PrimaryNumberLabelContext(_localctx);
+				_localctx = new NumberPrimaryContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(286);
@@ -2524,7 +2275,7 @@ public class flaskParser extends Parser {
 				}
 				break;
 			case STRING:
-				_localctx = new PrimaryStringLabelContext(_localctx);
+				_localctx = new StringPrimaryContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
 				setState(287);
@@ -2532,7 +2283,7 @@ public class flaskParser extends Parser {
 				}
 				break;
 			case TRUE:
-				_localctx = new PrimaryTrueLabelContext(_localctx);
+				_localctx = new TruePrimaryContext(_localctx);
 				enterOuterAlt(_localctx, 4);
 				{
 				setState(288);
@@ -2540,7 +2291,7 @@ public class flaskParser extends Parser {
 				}
 				break;
 			case FALSE:
-				_localctx = new PrimaryFalseLabelContext(_localctx);
+				_localctx = new FalsePrimaryContext(_localctx);
 				enterOuterAlt(_localctx, 5);
 				{
 				setState(289);
@@ -2548,7 +2299,7 @@ public class flaskParser extends Parser {
 				}
 				break;
 			case NONE:
-				_localctx = new PrimaryNoneLabelContext(_localctx);
+				_localctx = new NonePrimaryContext(_localctx);
 				enterOuterAlt(_localctx, 6);
 				{
 				setState(290);
@@ -2556,7 +2307,7 @@ public class flaskParser extends Parser {
 				}
 				break;
 			case LPAREN:
-				_localctx = new PrimaryParenLabelContext(_localctx);
+				_localctx = new ParenPrimaryContext(_localctx);
 				enterOuterAlt(_localctx, 7);
 				{
 				setState(291);
@@ -2576,7 +2327,7 @@ public class flaskParser extends Parser {
 				}
 				break;
 			case LBRACK:
-				_localctx = new PrimaryListLabelContext(_localctx);
+				_localctx = new ListPrimaryContext(_localctx);
 				enterOuterAlt(_localctx, 8);
 				{
 				setState(296);
@@ -2584,7 +2335,7 @@ public class flaskParser extends Parser {
 				}
 				break;
 			case LBRACE:
-				_localctx = new PrimaryDictLabelContext(_localctx);
+				_localctx = new DictPrimaryContext(_localctx);
 				enterOuterAlt(_localctx, 9);
 				{
 				setState(297);
@@ -2608,65 +2359,6 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class TrailerContext extends ParserRuleContext {
-		public TrailerContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_trailer; }
-	 
-		public TrailerContext() { }
-		public void copyFrom(TrailerContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class TrailerSubscriptLabelContext extends TrailerContext {
-		public TerminalNode LBRACK() { return getToken(flaskParser.LBRACK, 0); }
-		public List<IgnContext> ign() {
-			return getRuleContexts(IgnContext.class);
-		}
-		public IgnContext ign(int i) {
-			return getRuleContext(IgnContext.class,i);
-		}
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public TerminalNode RBRACK() { return getToken(flaskParser.RBRACK, 0); }
-		public TrailerSubscriptLabelContext(TrailerContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterTrailerSubscriptLabel(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitTrailerSubscriptLabel(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitTrailerSubscriptLabel(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class TrailerAttrLabelContext extends TrailerContext {
-		public TerminalNode DOT() { return getToken(flaskParser.DOT, 0); }
-		public TerminalNode ID() { return getToken(flaskParser.ID, 0); }
-		public TrailerAttrLabelContext(TrailerContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterTrailerAttrLabel(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitTrailerAttrLabel(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitTrailerAttrLabel(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class TrailerCallLabelContext extends TrailerContext {
 		public TerminalNode LPAREN() { return getToken(flaskParser.LPAREN, 0); }
 		public List<IgnContext> ign() {
 			return getRuleContexts(IgnContext.class);
@@ -2678,18 +2370,28 @@ public class flaskParser extends Parser {
 		public ArgumentListContext argumentList() {
 			return getRuleContext(ArgumentListContext.class,0);
 		}
-		public TrailerCallLabelContext(TrailerContext ctx) { copyFrom(ctx); }
+		public TerminalNode LBRACK() { return getToken(flaskParser.LBRACK, 0); }
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class,0);
+		}
+		public TerminalNode RBRACK() { return getToken(flaskParser.RBRACK, 0); }
+		public TerminalNode DOT() { return getToken(flaskParser.DOT, 0); }
+		public TerminalNode ID() { return getToken(flaskParser.ID, 0); }
+		public TrailerContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_trailer; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterTrailerCallLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterTrailer(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitTrailerCallLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitTrailer(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitTrailerCallLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitTrailer(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2703,7 +2405,6 @@ public class flaskParser extends Parser {
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case LPAREN:
-				_localctx = new TrailerCallLabelContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(300);
@@ -2727,7 +2428,6 @@ public class flaskParser extends Parser {
 				}
 				break;
 			case LBRACK:
-				_localctx = new TrailerSubscriptLabelContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(308);
@@ -2743,7 +2443,6 @@ public class flaskParser extends Parser {
 				}
 				break;
 			case DOT:
-				_localctx = new TrailerAttrLabelContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
 				setState(314);
@@ -2769,18 +2468,6 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ArgumentListContext extends ParserRuleContext {
-		public ArgumentListContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_argumentList; }
-	 
-		public ArgumentListContext() { }
-		public void copyFrom(ArgumentListContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ArgumentListLabelContext extends ArgumentListContext {
 		public List<ArgumentContext> argument() {
 			return getRuleContexts(ArgumentContext.class);
 		}
@@ -2797,18 +2484,21 @@ public class flaskParser extends Parser {
 		public TerminalNode COMMA(int i) {
 			return getToken(flaskParser.COMMA, i);
 		}
-		public ArgumentListLabelContext(ArgumentListContext ctx) { copyFrom(ctx); }
+		public ArgumentListContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_argumentList; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterArgumentListLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterArgumentList(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitArgumentListLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitArgumentList(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitArgumentListLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitArgumentList(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2818,7 +2508,6 @@ public class flaskParser extends Parser {
 		enterRule(_localctx, 48, RULE_argumentList);
 		try {
 			int _alt;
-			_localctx = new ArgumentListLabelContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(318);
@@ -2872,55 +2561,26 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ArgumentContext extends ParserRuleContext {
-		public ArgumentContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_argument; }
-	 
-		public ArgumentContext() { }
-		public void copyFrom(ArgumentContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ArgumentPositionalLabelContext extends ArgumentContext {
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-		public ArgumentPositionalLabelContext(ArgumentContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterArgumentPositionalLabel(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitArgumentPositionalLabel(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitArgumentPositionalLabel(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ArgumentKeywordLabelContext extends ArgumentContext {
 		public TerminalNode ID() { return getToken(flaskParser.ID, 0); }
 		public TerminalNode ASSIGN() { return getToken(flaskParser.ASSIGN, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
-		public ArgumentKeywordLabelContext(ArgumentContext ctx) { copyFrom(ctx); }
+		public ArgumentContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_argument; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterArgumentKeywordLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterArgument(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitArgumentKeywordLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitArgument(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitArgumentKeywordLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitArgument(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2933,7 +2593,6 @@ public class flaskParser extends Parser {
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,38,_ctx) ) {
 			case 1:
-				_localctx = new ArgumentKeywordLabelContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(334);
@@ -2945,7 +2604,6 @@ public class flaskParser extends Parser {
 				}
 				break;
 			case 2:
-				_localctx = new ArgumentPositionalLabelContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(337);
@@ -2967,18 +2625,6 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class IgnContext extends ParserRuleContext {
-		public IgnContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_ign; }
-	 
-		public IgnContext() { }
-		public void copyFrom(IgnContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class IgnLabelContext extends IgnContext {
 		public List<TerminalNode> NEWLINE() { return getTokens(flaskParser.NEWLINE); }
 		public TerminalNode NEWLINE(int i) {
 			return getToken(flaskParser.NEWLINE, i);
@@ -2991,18 +2637,21 @@ public class flaskParser extends Parser {
 		public TerminalNode DEDENT(int i) {
 			return getToken(flaskParser.DEDENT, i);
 		}
-		public IgnLabelContext(IgnContext ctx) { copyFrom(ctx); }
+		public IgnContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_ign; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterIgnLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterIgn(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitIgnLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitIgn(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitIgnLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitIgn(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3013,7 +2662,6 @@ public class flaskParser extends Parser {
 		int _la;
 		try {
 			int _alt;
-			_localctx = new IgnLabelContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(343);
@@ -3055,18 +2703,6 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ListLiteralContext extends ParserRuleContext {
-		public ListLiteralContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_listLiteral; }
-	 
-		public ListLiteralContext() { }
-		public void copyFrom(ListLiteralContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ListLiteralLabelContext extends ListLiteralContext {
 		public TerminalNode LBRACK() { return getToken(flaskParser.LBRACK, 0); }
 		public List<IgnContext> ign() {
 			return getRuleContexts(IgnContext.class);
@@ -3085,18 +2721,21 @@ public class flaskParser extends Parser {
 		public TerminalNode COMMA(int i) {
 			return getToken(flaskParser.COMMA, i);
 		}
-		public ListLiteralLabelContext(ListLiteralContext ctx) { copyFrom(ctx); }
+		public ListLiteralContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_listLiteral; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterListLiteralLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterListLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitListLiteralLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitListLiteral(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitListLiteralLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitListLiteral(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3107,7 +2746,6 @@ public class flaskParser extends Parser {
 		int _la;
 		try {
 			int _alt;
-			_localctx = new ListLiteralLabelContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(346);
@@ -3177,18 +2815,6 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class DictLiteralContext extends ParserRuleContext {
-		public DictLiteralContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_dictLiteral; }
-	 
-		public DictLiteralContext() { }
-		public void copyFrom(DictLiteralContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class DictLiteralLabelContext extends DictLiteralContext {
 		public TerminalNode LBRACE() { return getToken(flaskParser.LBRACE, 0); }
 		public List<IgnContext> ign() {
 			return getRuleContexts(IgnContext.class);
@@ -3207,18 +2833,21 @@ public class flaskParser extends Parser {
 		public TerminalNode COMMA(int i) {
 			return getToken(flaskParser.COMMA, i);
 		}
-		public DictLiteralLabelContext(DictLiteralContext ctx) { copyFrom(ctx); }
+		public DictLiteralContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_dictLiteral; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterDictLiteralLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterDictLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitDictLiteralLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitDictLiteral(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitDictLiteralLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitDictLiteral(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3229,7 +2858,6 @@ public class flaskParser extends Parser {
 		int _la;
 		try {
 			int _alt;
-			_localctx = new DictLiteralLabelContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(368);
@@ -3299,18 +2927,6 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class DictEntryContext extends ParserRuleContext {
-		public DictEntryContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_dictEntry; }
-	 
-		public DictEntryContext() { }
-		public void copyFrom(DictEntryContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class DictEntryLabelContext extends DictEntryContext {
 		public List<ExpressionContext> expression() {
 			return getRuleContexts(ExpressionContext.class);
 		}
@@ -3324,18 +2940,21 @@ public class flaskParser extends Parser {
 			return getRuleContext(IgnContext.class,i);
 		}
 		public TerminalNode COLON() { return getToken(flaskParser.COLON, 0); }
-		public DictEntryLabelContext(DictEntryContext ctx) { copyFrom(ctx); }
+		public DictEntryContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_dictEntry; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterDictEntryLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterDictEntry(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitDictEntryLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitDictEntry(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitDictEntryLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitDictEntry(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3344,7 +2963,6 @@ public class flaskParser extends Parser {
 		DictEntryContext _localctx = new DictEntryContext(_ctx, getState());
 		enterRule(_localctx, 58, RULE_dictEntry);
 		try {
-			_localctx = new DictEntryLabelContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(390);
@@ -3372,18 +2990,6 @@ public class flaskParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class Dotted_nameContext extends ParserRuleContext {
-		public Dotted_nameContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_dotted_name; }
-	 
-		public Dotted_nameContext() { }
-		public void copyFrom(Dotted_nameContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class DottedNameLabelContext extends Dotted_nameContext {
 		public List<TerminalNode> ID() { return getTokens(flaskParser.ID); }
 		public TerminalNode ID(int i) {
 			return getToken(flaskParser.ID, i);
@@ -3392,18 +2998,21 @@ public class flaskParser extends Parser {
 		public TerminalNode DOT(int i) {
 			return getToken(flaskParser.DOT, i);
 		}
-		public DottedNameLabelContext(Dotted_nameContext ctx) { copyFrom(ctx); }
+		public Dotted_nameContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_dotted_name; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterDottedNameLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).enterDotted_name(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitDottedNameLabel(this);
+			if ( listener instanceof flaskParserListener ) ((flaskParserListener)listener).exitDotted_name(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitDottedNameLabel(this);
+			if ( visitor instanceof flaskParserVisitor ) return ((flaskParserVisitor<? extends T>)visitor).visitDotted_name(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -3413,7 +3022,6 @@ public class flaskParser extends Parser {
 		enterRule(_localctx, 60, RULE_dotted_name);
 		int _la;
 		try {
-			_localctx = new DottedNameLabelContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(396);

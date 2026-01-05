@@ -14,9 +14,9 @@ public class JinjaIfBlock extends JinjaBlock{
     @Override
     public String toString() {
         return "JinjaIfBlock{" +
-                "body=" + body +
-                ", Name='" + Name + '\'' +
-                ", numberOfLine=" + numberOfLine +
+                "\n\tbody=" + body +
+                "\n, Name='" + Name + '\'' +
+                "\n, numberOfLine=" + numberOfLine +
                 '}';
     }
 }

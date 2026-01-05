@@ -28,8 +28,8 @@ public abstract class Node {
     @Override
     public String toString() {
         return "Node{" +
-                "Name='" + Name + '\'' +
-                ", numberOfLine=" + numberOfLine +
+                "\nName='" + Name + '\'' +
+                "\n, numberOfLine=" + numberOfLine +
                 '}';
     }
 }

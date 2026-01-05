@@ -32,10 +32,10 @@ public class JinjaTag extends HtmlElement{
     @Override
     public String toString() {
         return "JinjaTag{" +
-                "tagContent='" + tagContent + '\'' +
-                ", body=" + body +
-                ", Name='" + Name + '\'' +
-                ", numberOfLine=" + numberOfLine +
+                "\n\ttagContent='" + tagContent + '\'' +
+                "\n, body=" + body +
+                "\n, Name='" + Name + '\'' +
+                "\n, numberOfLine=" + numberOfLine +
                 '}';
     }
 }

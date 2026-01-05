@@ -22,9 +22,9 @@ public abstract class JinjaBlock extends HtmlElement{
     @Override
     public String toString() {
         return "JinjaBlock{" +
-                "body=" + body +
-                ", Name='" + Name + '\'' +
-                ", numberOfLine=" + numberOfLine +
+                "\n\tbody=" + body +
+                "\n, Name='" + Name + '\'' +
+                "\n, numberOfLine=" + numberOfLine +
                 '}';
     }
 

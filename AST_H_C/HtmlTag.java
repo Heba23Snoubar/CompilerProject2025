@@ -2,10 +2,7 @@ package AST_H_C;
 
 
 
-import javax.swing.text.html.HTML;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class HtmlTag extends HtmlElement {
 
@@ -50,9 +47,9 @@ public class HtmlTag extends HtmlElement {
     @Override
     public String toString() {
         return "HtmlTag{" +
-                "tagName='" + tagName + "'\n" +
-                ", attributes=" + attributes+ "'\n"+
-                ", children=" + children +"'\n"+
+                "\n\ttagName='" + tagName + "\n" +
+                "\t, attributes=" + attributes+ "\n"+
+                "\t, children=\n\t\t" + children +""+
                 '}';
     }
 }

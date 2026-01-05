@@ -19,15 +19,30 @@
 package AST;
 
 public class AttributeAccess extends AstNode {
-
+//target.attribute
     private final AstNode target;
     private final String attribute;
 
     public AttributeAccess(AstNode target, String attribute, int line) {
-        super("Attribute(" + attribute + ")", line);
+
+        super("AttributeAccess(" + attribute + ")", line);
         this.target = target;
         this.attribute = attribute;
 
         addChild(target);
+    }
+
+
+    public String getAttributeName() {
+        return attribute;
+    }
+
+    public AstNode getTarget() {
+        return target;
+    }
+
+    @Override
+    public String toString() {
+        return "AttributeAccess: " + attribute + " (Line: " + getLine() + ")";
     }
 }

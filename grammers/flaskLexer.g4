@@ -1,3 +1,4 @@
+//معالجة الـ Indentation
 lexer grammar flaskLexer;
 
 @header {
@@ -36,16 +37,12 @@ lexer grammar flaskLexer;
         Token t = super.nextToken();
 
         if (t.getType() == EOF) {
-
-            // ✅ إذا آخر توكن ليس NEWLINE، أضف NEWLINE وهمي قبل إنهاء الملف
             if (!pendingTokens.isEmpty()) {
-                // لا شيء
+
             } else {
-                // إنشاء NEWLINE وهمي
+
                 pendingTokens.add(createToken(NEWLINE, "\n"));
             }
-
-            // الآن أخرج كل الـ DEDENTs
             while (indentLevels.size() > 1) {
                 indentLevels.pop();
                 pendingTokens.add(createToken(DEDENT, ""));
@@ -96,7 +93,7 @@ NEWLINE
                 if (last >= 0 && last < txt.length() - 1)
                     indentation = txt.substring(last + 1);
 
-                String normalized = indentation
+                String normalized = indentation //tap=4
                         .replace("\t", "    ")
                         .replace("\u00A0", " ")
                         .replace("\u2007", " ")

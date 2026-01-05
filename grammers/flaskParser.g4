@@ -2,79 +2,59 @@ parser grammar flaskParser;
 
 options { tokenVocab = flaskLexer; }
 
-/* =========================
-   ENTRY
-   ========================= */
 
 program
-    : (NEWLINE | statement)* EOF                        #programLabel
+    : (NEWLINE | statement)* EOF
     ;
 
-/* =========================
-   STATEMENTS
-   ========================= */
 
 statement
-    : simple_stmt                                       #statementSimpleLabel
-    | compound_stmt                                     #statementCompoundLabel
+    : simple_stmt
+    | compound_stmt
     ;
 
 simple_stmt
-    : importStmt stmt_end                               #simpleImportLabel
-    | assignStmt stmt_end                               #simpleAssignLabel
-    | returnStmt stmt_end                               #simpleReturnLabel
-    | exprStmt stmt_end                                 #simpleExprLabel
+    : importStmt stmt_end      #importStmtRule
+    | assignStmt stmt_end      #assignStmtRule
+    | returnStmt stmt_end      #returnStmtRule
+    | exprStmt stmt_end        #expressionStmtRule
     ;
 
-stmt_end : NEWLINE+ | EOF
-;
-//statement
-  //    : simple_stmt #statementSimpleLabel
-  //    | compound_stmt #statementCompoundLabel
-  //;
+stmt_end : NEWLINE+ | EOF ;
+
 
 compound_stmt
-    : functionDef                                       #compoundFunctionLabel
-    | ifStmt                                            #compoundIfLabel
-    | forStmt                                           #compoundForLabel
+    : functionDef              #functionDefRule
+    | ifStmt                   #ifStmtRule
+    | forStmt                  #forStmtRule
     ;
 
-/* =========================
-   IMPORTS
-   ========================= */
-
 importStmt
-    : FROM dotted_name IMPORT importList                #importFromLabel
-    | IMPORT dotted_name                                #importSimpleLabel
+    : FROM dotted_name IMPORT importList
+    | IMPORT dotted_name
     ;
 
 importList
-    : importItem (COMMA importItem)*                   #importListLabel
+    : importItem (COMMA importItem)*
     ;
 
 importItem
-    : ID (AS ID)?                                       #importItemLabel
+    : ID (AS ID)?
     ;
 
-/* =========================
-   DECORATORS + FUNCTION DEF
-   ========================= */
 
 functionDef
-    : decorator* DEF ID LPAREN paramList? RPAREN COLON block #functionDefLabel
+    : decorator* DEF ID LPAREN paramList? RPAREN COLON block
     ;
 
 decorator
-    : AT dotted_name (LPAREN argumentList? RPAREN)? NEWLINE  #decoratorLabel
+    : AT dotted_name (LPAREN argumentList? RPAREN)? NEWLINE
     ;
 
 paramList
-    : ID (COMMA ID)*                                    #paramListLabel
+    : ID (COMMA ID)*
     ;
 
-/* =========================
-   BLOCK
-   ========================= */
 
 block
     : NEWLINE
@@ -82,131 +62,109 @@ block
         INDENT (NEWLINE* statement)+ DEDENT
         | (NEWLINE* statement)+
       )
-      #blockLabel
     ;
 
-/* =========================
-   IF / FOR
-   ========================= */
 
 ifStmt
     : IF expression COLON block
       (ELIF expression COLON block)*
       (ELSE COLON block)?
-      #ifStmtLabel
     ;
 
 forStmt
-    : FOR ID IN expression COLON block                 #forStmtLabel
+    : FOR ID IN expression COLON block
     ;
 
-/* ========================
-   ASSIGN / RETURN / EXPR
-   ========================= */
 
 assignStmt
-    : expression ASSIGN expression                     #assignStmtLabel
+    : expression ASSIGN expression
     ;
 
-/* return "Not Found", 404  */
 returnStmt
-    : RETURN expression (COMMA expression)* (COMMA)?   #returnStmtLabel
-    | RETURN                                           #returnStmtEmptyLabel
+    : RETURN expression (COMMA expression)* (COMMA)?
+    | RETURN
     ;
 
 exprStmt
-    : expression                                       #exprStmtLabel
+    : expression
     ;
 
-/* =========================
-   EXPRESSIONS
-   ========================= */
-
 expression
-    : comparison (COMMA comparison)* (COMMA)?         #expressionLabel
+    : comparison (COMMA comparison)* (COMMA)?
     ;
 
 comparison
-    : arith_expr ((EQ | NEQ | LT | GT | LE | GE | (ASSIGN ASSIGN)) arith_expr)* #comparisonLabel
+    : arith_expr ((EQ | NEQ | LT | GT | LE | GE | (ASSIGN ASSIGN)) arith_expr)*
     ;
 
+
 arith_expr
-    : term ((PLUS | MINUS) term)*                      #arithExprLabel
+    : term ((PLUS | MINUS) term)*
     ;
 
 term
-    : factor ((MULT | DIV) factor)*                    #termLabel
+    : factor ((MULT | DIV) factor)*
     ;
 
 factor
-    : primary trailer*                                 #factorLabel
+    : primary trailer*
     ;
 
 primary
-    : ID                                               #primaryIdLabel
-    | NUMBER                                           #primaryNumberLabel
-    | STRING                                           #primaryStringLabel
-    | TRUE                                             #primaryTrueLabel
-    | FALSE                                            #primaryFalseLabel
-    | NONE                                             #primaryNoneLabel
-    | LPAREN expression? RPAREN                        #primaryParenLabel
-    | listLiteral                                      #primaryListLabel
-    | dictLiteral                                      #primaryDictLabel
+    : ID                       #identifierPrimary
+    | NUMBER                   #numberPrimary
+    | STRING                   #stringPrimary
+    | TRUE                     #truePrimary
+    | FALSE                    #falsePrimary
+    | NONE                     #nonePrimary
+    | LPAREN expression? RPAREN #parenPrimary
+    | listLiteral              #listPrimary
+    | dictLiteral              #dictPrimary
     ;
-
-/* =========================
-   CALL / INDEX / ATTRIBUTE
-   ========================= */
 
 trailer
-    : LPAREN ign argumentList? ign RPAREN             #trailerCallLabel
-    | LBRACK ign expression ign RBRACK               #trailerSubscriptLabel
-    | DOT ID                                         #trailerAttrLabel
+    : LPAREN ign argumentList? ign RPAREN
+    | LBRACK ign expression ign RBRACK
+    | DOT ID
     ;
 
-/* =========================
-   ARGUMENTS
-   ========================= */
+
 
 argumentList
-    : argument (ign COMMA ign argument)* (ign COMMA)? #argumentListLabel
+    : argument (ign COMMA ign argument)* (ign COMMA)?
     ;
+
 
 argument
-    : ID ASSIGN expression                             #argumentKeywordLabel
-    | expression                                       #argumentPositionalLabel
+    : ID ASSIGN expression
+    | expression
     ;
-
 ign
-    : (NEWLINE | INDENT | DEDENT)*                     #ignLabel
+    : (NEWLINE | INDENT | DEDENT)*
     ;
 
-/* =========================
-   LIST / DICT
-   ========================= */
 
 listLiteral
     : LBRACK ign
       (expression ign (COMMA ign expression ign)*)?
       (COMMA ign)?
-      RBRACK                                         #listLiteralLabel
+      RBRACK
     ;
+
 
 dictLiteral
     : LBRACE ign
       (dictEntry ign (COMMA ign dictEntry ign)*)?
       (COMMA ign)?
-      RBRACE                                         #dictLiteralLabel
+      RBRACE
     ;
 
 dictEntry
-    : expression ign COLON ign expression             #dictEntryLabel
+    : expression ign COLON ign expression
     ;
 
-/* =========================
-   dotted name
-   ========================= */
+
 
 dotted_name
-    : ID (DOT ID)*                                    #dottedNameLabel
+    : ID (DOT ID)*
     ;

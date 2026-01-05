@@ -19,9 +19,8 @@ public class HtmlText extends HtmlElement {
     @Override
     public String toString() {
         return "HtmlText{" +
-                "text='" + text + '\'' +
-                ", Name='" + Name + '\'' +
-                ", numberOfLine=" + numberOfLine +
+                "\n, Name='" + Name + '\'' +
+                "\n, numberOfLine=" + numberOfLine +
                 '}';
     }
 }

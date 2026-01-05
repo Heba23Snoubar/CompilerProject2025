@@ -1,4 +1,4 @@
-// Generated from C:/Users/Heba2005/OneDrive/سطح المكتب/compiler2/grammers/flaskParser.g4 by ANTLR 4.13.2
+// Generated from C:/Users/techrepair/IdeaProjects/compiler2/compiler2/grammers/flaskParser.g4 by ANTLR 4.13.2
 package grammers;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
@@ -18,49 +18,42 @@ public class flaskParserBaseVisitor<T> extends AbstractParseTreeVisitor<T> imple
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitProgramLabel(flaskParser.ProgramLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitProgram(flaskParser.ProgramContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitStatementSimpleLabel(flaskParser.StatementSimpleLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitStatement(flaskParser.StatementContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitStatementCompoundLabel(flaskParser.StatementCompoundLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitImportStmtRule(flaskParser.ImportStmtRuleContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitSimpleImportLabel(flaskParser.SimpleImportLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitAssignStmtRule(flaskParser.AssignStmtRuleContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitSimpleAssignLabel(flaskParser.SimpleAssignLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitReturnStmtRule(flaskParser.ReturnStmtRuleContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitSimpleReturnLabel(flaskParser.SimpleReturnLabelContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitSimpleExprLabel(flaskParser.SimpleExprLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitExpressionStmtRule(flaskParser.ExpressionStmtRuleContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -74,292 +67,257 @@ public class flaskParserBaseVisitor<T> extends AbstractParseTreeVisitor<T> imple
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitCompoundFunctionLabel(flaskParser.CompoundFunctionLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitFunctionDefRule(flaskParser.FunctionDefRuleContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitCompoundIfLabel(flaskParser.CompoundIfLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitIfStmtRule(flaskParser.IfStmtRuleContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitCompoundForLabel(flaskParser.CompoundForLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitForStmtRule(flaskParser.ForStmtRuleContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitImportFromLabel(flaskParser.ImportFromLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitImportStmt(flaskParser.ImportStmtContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitImportSimpleLabel(flaskParser.ImportSimpleLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitImportList(flaskParser.ImportListContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitImportListLabel(flaskParser.ImportListLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitImportItem(flaskParser.ImportItemContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitImportItemLabel(flaskParser.ImportItemLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitFunctionDef(flaskParser.FunctionDefContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFunctionDefLabel(flaskParser.FunctionDefLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitDecorator(flaskParser.DecoratorContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitDecoratorLabel(flaskParser.DecoratorLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitParamList(flaskParser.ParamListContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitParamListLabel(flaskParser.ParamListLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitBlock(flaskParser.BlockContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitBlockLabel(flaskParser.BlockLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitIfStmt(flaskParser.IfStmtContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitIfStmtLabel(flaskParser.IfStmtLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitForStmt(flaskParser.ForStmtContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitForStmtLabel(flaskParser.ForStmtLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitAssignStmt(flaskParser.AssignStmtContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitAssignStmtLabel(flaskParser.AssignStmtLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitReturnStmt(flaskParser.ReturnStmtContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitReturnStmtLabel(flaskParser.ReturnStmtLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitExprStmt(flaskParser.ExprStmtContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitReturnStmtEmptyLabel(flaskParser.ReturnStmtEmptyLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitExpression(flaskParser.ExpressionContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitExprStmtLabel(flaskParser.ExprStmtLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitComparison(flaskParser.ComparisonContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitExpressionLabel(flaskParser.ExpressionLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitArith_expr(flaskParser.Arith_exprContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitComparisonLabel(flaskParser.ComparisonLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitTerm(flaskParser.TermContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitArithExprLabel(flaskParser.ArithExprLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitFactor(flaskParser.FactorContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitTermLabel(flaskParser.TermLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitIdentifierPrimary(flaskParser.IdentifierPrimaryContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFactorLabel(flaskParser.FactorLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitNumberPrimary(flaskParser.NumberPrimaryContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPrimaryIdLabel(flaskParser.PrimaryIdLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitStringPrimary(flaskParser.StringPrimaryContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPrimaryNumberLabel(flaskParser.PrimaryNumberLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitTruePrimary(flaskParser.TruePrimaryContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPrimaryStringLabel(flaskParser.PrimaryStringLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitFalsePrimary(flaskParser.FalsePrimaryContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPrimaryTrueLabel(flaskParser.PrimaryTrueLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitNonePrimary(flaskParser.NonePrimaryContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPrimaryFalseLabel(flaskParser.PrimaryFalseLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitParenPrimary(flaskParser.ParenPrimaryContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPrimaryNoneLabel(flaskParser.PrimaryNoneLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitListPrimary(flaskParser.ListPrimaryContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPrimaryParenLabel(flaskParser.PrimaryParenLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitDictPrimary(flaskParser.DictPrimaryContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPrimaryListLabel(flaskParser.PrimaryListLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitTrailer(flaskParser.TrailerContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPrimaryDictLabel(flaskParser.PrimaryDictLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitArgumentList(flaskParser.ArgumentListContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitTrailerCallLabel(flaskParser.TrailerCallLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitArgument(flaskParser.ArgumentContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitTrailerSubscriptLabel(flaskParser.TrailerSubscriptLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitIgn(flaskParser.IgnContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitTrailerAttrLabel(flaskParser.TrailerAttrLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitListLiteral(flaskParser.ListLiteralContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitArgumentListLabel(flaskParser.ArgumentListLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitDictLiteral(flaskParser.DictLiteralContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitArgumentKeywordLabel(flaskParser.ArgumentKeywordLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitDictEntry(flaskParser.DictEntryContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitArgumentPositionalLabel(flaskParser.ArgumentPositionalLabelContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitIgnLabel(flaskParser.IgnLabelContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitListLiteralLabel(flaskParser.ListLiteralLabelContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitDictLiteralLabel(flaskParser.DictLiteralLabelContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitDictEntryLabel(flaskParser.DictEntryLabelContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitDottedNameLabel(flaskParser.DottedNameLabelContext ctx) { return visitChildren(ctx); }
+	@Override public T visitDotted_name(flaskParser.Dotted_nameContext ctx) { return visitChildren(ctx); }
 }

@@ -1,6 +1,6 @@
 package AST_H_C;
 
-public class JinjaSingleTag  extends Node {
+public class JinjaSingleTag  extends Node{
 
     public JinjaSingleTag(String Name, int numberOfLine) {
         super(Name, numberOfLine);
@@ -9,8 +9,8 @@ public class JinjaSingleTag  extends Node {
     @Override
     public String toString() {
         return "JinjaSingleTag{" +
-                "Name='" + Name + '\'' +
-                ", numberOfLine=" + numberOfLine +
+                "\nName='" + Name + '\'' +
+                "\n, numberOfLine=" + numberOfLine +
                 '}';
     }
 }

@@ -11,8 +11,6 @@ import java.util.List;
 
 public class HtmlVisitor extends htmlParserBaseVisitor<Node> {
 
-    // ============ 1. دوال المساعدة ============
-
     private int getLineNumber(ParseTree ctx) {
         if (ctx instanceof org.antlr.v4.runtime.ParserRuleContext) {
             Token start = ((org.antlr.v4.runtime.ParserRuleContext) ctx).getStart();
@@ -34,7 +32,6 @@ public class HtmlVisitor extends htmlParserBaseVisitor<Node> {
         return value;
     }
 
-    // ============ 2. جذر المستند (Document Root) ============
 
     @Override
     public Node visitHtmlDocument(htmlParser.HtmlDocumentContext ctx) {
@@ -48,11 +45,9 @@ public class HtmlVisitor extends htmlParserBaseVisitor<Node> {
             }
         }
 
-        // إنشاء HtmlTag مع List<HtmlAttribute> بدلاً من Map
         return new HtmlTag("HTML_DOCUMENT", line, "html", new ArrayList<>(), children);
     }
 
-    // ============ 3. العناصر الرئيسية ============
 
     @Override
     public Node visitTag_html(htmlParser.Tag_htmlContext ctx) {
@@ -86,12 +81,10 @@ public class HtmlVisitor extends htmlParserBaseVisitor<Node> {
         return new HtmlText("HTML_TEXT", line, text);
     }
 
-    // ============ 4. معالجة HTML Tags ============
 
     public Node visitHtmlTag(htmlParser.HtmlTagContext ctx) {
         int line = getLineNumber(ctx);
 
-        // 1. الحصول على اسم الوسم
         String tagName = "";
         if (ctx.TAG_NAME() != null && ctx.TAG_NAME().size() > 0) {
             tagName = ctx.TAG_NAME(0).getText();
@@ -109,8 +102,6 @@ public class HtmlVisitor extends htmlParserBaseVisitor<Node> {
                 attributes.add(new HtmlAttribute("HTML_ATTRIBUTE", line, attrName, attrValue));
             }
         }
-
-        // 3. جمع العناصر الفرعية
         List<HtmlElement> children = new ArrayList<>();
         if (ctx.htmlElement() != null) {
             for (htmlParser.HtmlElementContext childCtx : ctx.htmlElement()) {
@@ -124,7 +115,6 @@ public class HtmlVisitor extends htmlParserBaseVisitor<Node> {
         return new HtmlTag("HTML_TAG", line, tagName, attributes, children);
     }
 
-    // ============ 5. معالجة CSS Styles ============
 
     public Node visitCssStyle(htmlParser.CssStyleContext ctx) {
         int line = getLineNumber(ctx);
@@ -179,15 +169,11 @@ public class HtmlVisitor extends htmlParserBaseVisitor<Node> {
         return new CssProperty("CSS_PROPERTY", line, propertyName, valueBuilder.toString());
     }
 
-    // ============ 6. معالجة Jinja2 Expressions ============
-
     public Node visitJinjaExpression(htmlParser.JinjaExpressionContext ctx) {
         int line = getLineNumber(ctx);
         String expression = ctx.expr().getText();
         return new JinjaExpression("JINJA_EXPRESSION", line, expression);
     }
-
-    // ============ 7. معالجة Jinja2 Tags ============
 
     public Node visitJinjaTag(htmlParser.JinjaTagContext ctx) {
         if (ctx.jinjaSingleTag() != null) {
@@ -203,8 +189,8 @@ public class HtmlVisitor extends htmlParserBaseVisitor<Node> {
         int line = getLineNumber(ctx);
         String tagContent = ctx.singleJinjaTagContent().getText();
         return new JinjaSingleTag("JINJA_SINGLE_TAG", line);
-        // أو إذا أردت استخدام JinjaTag:
-        // return new JinjaTag("JINJA_SINGLE_TAG", line, tagContent, new ArrayList<>());
+
+
     }
 
     @Override
@@ -220,12 +206,9 @@ public class HtmlVisitor extends htmlParserBaseVisitor<Node> {
     @Override
     public Node visitJinjaForBlock(htmlParser.JinjaForBlockContext ctx) {
         int line = getLineNumber(ctx);
-
-        // الحصول على المتغير والمجموعة
         String variable = ctx.ID().getText();
         String collection = ctx.expr().getText();
 
-        // جمع body
         List<HtmlElement> body = new ArrayList<>();
         for (htmlParser.HtmlElementContext elemCtx : ctx.htmlElement()) {
             Node node = visit(elemCtx);
@@ -234,7 +217,6 @@ public class HtmlVisitor extends htmlParserBaseVisitor<Node> {
             }
         }
 
-        // استخدام JinjaForBlock الجديد
         return new JinjaForBlock("JINJA_FOR_BLOCK", line, body);
     }
 
@@ -242,10 +224,8 @@ public class HtmlVisitor extends htmlParserBaseVisitor<Node> {
     public Node visitJinjaIfBlock(htmlParser.JinjaIfBlockContext ctx) {
         int line = getLineNumber(ctx);
 
-        // الشرط الرئيسي
         String condition = ctx.expr(0).getText();
 
-        // جمع body
         List<HtmlElement> body = new ArrayList<>();
         for (htmlParser.HtmlElementContext elemCtx : ctx.htmlElement()) {
             Node node = visit(elemCtx);
@@ -254,11 +234,9 @@ public class HtmlVisitor extends htmlParserBaseVisitor<Node> {
             }
         }
 
-        // استخدام JinjaIfBlock الجديد
         return new JinjaIfBlock("JINJA_IF_BLOCK", line, body);
     }
 
-    // ============ 8. معالجة Jinja2 Comments ============
 
     public Node visitJinjaComment(htmlParser.JinjaCommentContext ctx) {
         int line = getLineNumber(ctx);

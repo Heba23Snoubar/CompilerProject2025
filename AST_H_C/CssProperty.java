@@ -1,6 +1,6 @@
 package AST_H_C;
 
-public class CssProperty extends Node {
+public class CssProperty extends Node{
 
     private  String property;
     private  String value;
@@ -31,8 +31,8 @@ public class CssProperty extends Node {
     public String toString() {
         return "CssProperty{" +
 
-                ", Name='" + Name + '\'' +
-                ", numberOfLine=" + numberOfLine +
+                "\n,Name='" + Name + '\'' +
+                "\n, numberOfLine=" + numberOfLine +
                 '}';
     }
 }

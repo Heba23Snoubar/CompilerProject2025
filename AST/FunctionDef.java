@@ -1,7 +1,5 @@
 package AST;
 
-import java.util.List;
-
 //public class FunctionDef extends AstNode {
 //    private String functionName;      // اسم التابع
 //    private List<String> parameters;  // قائمة أسماء البارامترات (IDs)
@@ -40,9 +38,21 @@ import java.util.List;
 //        return sb.toString();
 //    }
 //}
+import java.util.List;
+
 public class FunctionDef extends AstNode {
+    // 1. تعريف المتغيرات كـ Fields لكي نتمكن من الوصول إليها لاحقاً
+    private String name;
+    private List<String> params;
+    private List<AstNode> body;
+
     public FunctionDef(String name, List<String> params, List<AstNode> body, int line) {
         super("FunctionDef(" + name + ")", line);
+
+        // 2. تخزين القيم في المتغيرات
+        this.name = name;
+        this.params = params;
+        this.body = body;
 
         if (params != null) {
             for (String p : params) {
@@ -50,8 +60,23 @@ public class FunctionDef extends AstNode {
             }
         }
 
-        for (AstNode stmt : body) {
-            addChild(stmt);
+        if (body != null) {
+            for (AstNode stmt : body) {
+                addChild(stmt);
+            }
         }
+    }
+
+    // 3. إضافة دالات الـ Getter التي يطلبها الـ SymbolTableVisitor
+    public String getName() {
+        return name;
+    }
+
+    public List<String> getParameters() {
+        return params;
+    }
+
+    public List<AstNode> getBody() {
+        return body;
     }
 }

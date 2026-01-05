@@ -49,8 +49,6 @@ public abstract class AstNode {
         if (!prefix.isEmpty()) {
             sb.append(isLast ? "-- " : "|- ");
         }
-
-        // ⭐ هنا التعديل
         sb.append(nodeName)
                 .append(" (line ")
                 .append(line)
@@ -66,4 +64,6 @@ public abstract class AstNode {
         }
         return sb.toString();
     }
+    public List<AstNode> getChildren() { return children; }
+    public int getLine() { return line; }
 }

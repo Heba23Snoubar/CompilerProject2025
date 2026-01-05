@@ -11,9 +11,9 @@ public class JinjaForBlock extends JinjaBlock{
     @Override
     public String toString() {
         return "JinjaForBlock{" +
-                "body=" + body +
-                ", Name='" + Name + '\'' +
-                ", numberOfLine=" + numberOfLine +
+                "\n\tbody=" + body +
+                "\n, Name='" + Name + '\'' +
+                "\n, numberOfLine=" + numberOfLine +
                 '}';
     }
 }

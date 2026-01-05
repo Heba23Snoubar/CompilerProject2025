@@ -24,12 +24,24 @@ package AST;
 //                "]";
 //    }
 //}
+
 public class Assign extends AstNode {
+    private AstNode left;
+    private AstNode right;
+
     public Assign(AstNode left, AstNode right, int line) {
         super("Assign", line);
+        this.left = left;
+        this.right = right;
         addChild(left);
         addChild(right);
     }
+
+    public AstNode getLeft() {
+        return left;
+    }
+
+
 }
 
 

@@ -1,4 +1,4 @@
-// Generated from C:/Users/Heba2005/OneDrive/سطح المكتب/compiler2/grammers/flaskParser.g4 by ANTLR 4.13.2
+// Generated from C:/Users/techrepair/IdeaProjects/compiler2/compiler2/grammers/flaskParser.g4 by ANTLR 4.13.2
 package grammers;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -17,85 +17,73 @@ public class flaskParserBaseListener implements flaskParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterProgramLabel(flaskParser.ProgramLabelContext ctx) { }
+	@Override public void enterProgram(flaskParser.ProgramContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitProgramLabel(flaskParser.ProgramLabelContext ctx) { }
+	@Override public void exitProgram(flaskParser.ProgramContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStatementSimpleLabel(flaskParser.StatementSimpleLabelContext ctx) { }
+	@Override public void enterStatement(flaskParser.StatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStatementSimpleLabel(flaskParser.StatementSimpleLabelContext ctx) { }
+	@Override public void exitStatement(flaskParser.StatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStatementCompoundLabel(flaskParser.StatementCompoundLabelContext ctx) { }
+	@Override public void enterImportStmtRule(flaskParser.ImportStmtRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStatementCompoundLabel(flaskParser.StatementCompoundLabelContext ctx) { }
+	@Override public void exitImportStmtRule(flaskParser.ImportStmtRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSimpleImportLabel(flaskParser.SimpleImportLabelContext ctx) { }
+	@Override public void enterAssignStmtRule(flaskParser.AssignStmtRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSimpleImportLabel(flaskParser.SimpleImportLabelContext ctx) { }
+	@Override public void exitAssignStmtRule(flaskParser.AssignStmtRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSimpleAssignLabel(flaskParser.SimpleAssignLabelContext ctx) { }
+	@Override public void enterReturnStmtRule(flaskParser.ReturnStmtRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSimpleAssignLabel(flaskParser.SimpleAssignLabelContext ctx) { }
+	@Override public void exitReturnStmtRule(flaskParser.ReturnStmtRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSimpleReturnLabel(flaskParser.SimpleReturnLabelContext ctx) { }
+	@Override public void enterExpressionStmtRule(flaskParser.ExpressionStmtRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSimpleReturnLabel(flaskParser.SimpleReturnLabelContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterSimpleExprLabel(flaskParser.SimpleExprLabelContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSimpleExprLabel(flaskParser.SimpleExprLabelContext ctx) { }
+	@Override public void exitExpressionStmtRule(flaskParser.ExpressionStmtRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -113,505 +101,445 @@ public class flaskParserBaseListener implements flaskParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCompoundFunctionLabel(flaskParser.CompoundFunctionLabelContext ctx) { }
+	@Override public void enterFunctionDefRule(flaskParser.FunctionDefRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCompoundFunctionLabel(flaskParser.CompoundFunctionLabelContext ctx) { }
+	@Override public void exitFunctionDefRule(flaskParser.FunctionDefRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCompoundIfLabel(flaskParser.CompoundIfLabelContext ctx) { }
+	@Override public void enterIfStmtRule(flaskParser.IfStmtRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCompoundIfLabel(flaskParser.CompoundIfLabelContext ctx) { }
+	@Override public void exitIfStmtRule(flaskParser.IfStmtRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCompoundForLabel(flaskParser.CompoundForLabelContext ctx) { }
+	@Override public void enterForStmtRule(flaskParser.ForStmtRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCompoundForLabel(flaskParser.CompoundForLabelContext ctx) { }
+	@Override public void exitForStmtRule(flaskParser.ForStmtRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterImportFromLabel(flaskParser.ImportFromLabelContext ctx) { }
+	@Override public void enterImportStmt(flaskParser.ImportStmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitImportFromLabel(flaskParser.ImportFromLabelContext ctx) { }
+	@Override public void exitImportStmt(flaskParser.ImportStmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterImportSimpleLabel(flaskParser.ImportSimpleLabelContext ctx) { }
+	@Override public void enterImportList(flaskParser.ImportListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitImportSimpleLabel(flaskParser.ImportSimpleLabelContext ctx) { }
+	@Override public void exitImportList(flaskParser.ImportListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterImportListLabel(flaskParser.ImportListLabelContext ctx) { }
+	@Override public void enterImportItem(flaskParser.ImportItemContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitImportListLabel(flaskParser.ImportListLabelContext ctx) { }
+	@Override public void exitImportItem(flaskParser.ImportItemContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterImportItemLabel(flaskParser.ImportItemLabelContext ctx) { }
+	@Override public void enterFunctionDef(flaskParser.FunctionDefContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitImportItemLabel(flaskParser.ImportItemLabelContext ctx) { }
+	@Override public void exitFunctionDef(flaskParser.FunctionDefContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFunctionDefLabel(flaskParser.FunctionDefLabelContext ctx) { }
+	@Override public void enterDecorator(flaskParser.DecoratorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFunctionDefLabel(flaskParser.FunctionDefLabelContext ctx) { }
+	@Override public void exitDecorator(flaskParser.DecoratorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDecoratorLabel(flaskParser.DecoratorLabelContext ctx) { }
+	@Override public void enterParamList(flaskParser.ParamListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDecoratorLabel(flaskParser.DecoratorLabelContext ctx) { }
+	@Override public void exitParamList(flaskParser.ParamListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParamListLabel(flaskParser.ParamListLabelContext ctx) { }
+	@Override public void enterBlock(flaskParser.BlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitParamListLabel(flaskParser.ParamListLabelContext ctx) { }
+	@Override public void exitBlock(flaskParser.BlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBlockLabel(flaskParser.BlockLabelContext ctx) { }
+	@Override public void enterIfStmt(flaskParser.IfStmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBlockLabel(flaskParser.BlockLabelContext ctx) { }
+	@Override public void exitIfStmt(flaskParser.IfStmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIfStmtLabel(flaskParser.IfStmtLabelContext ctx) { }
+	@Override public void enterForStmt(flaskParser.ForStmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIfStmtLabel(flaskParser.IfStmtLabelContext ctx) { }
+	@Override public void exitForStmt(flaskParser.ForStmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterForStmtLabel(flaskParser.ForStmtLabelContext ctx) { }
+	@Override public void enterAssignStmt(flaskParser.AssignStmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitForStmtLabel(flaskParser.ForStmtLabelContext ctx) { }
+	@Override public void exitAssignStmt(flaskParser.AssignStmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAssignStmtLabel(flaskParser.AssignStmtLabelContext ctx) { }
+	@Override public void enterReturnStmt(flaskParser.ReturnStmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAssignStmtLabel(flaskParser.AssignStmtLabelContext ctx) { }
+	@Override public void exitReturnStmt(flaskParser.ReturnStmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterReturnStmtLabel(flaskParser.ReturnStmtLabelContext ctx) { }
+	@Override public void enterExprStmt(flaskParser.ExprStmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitReturnStmtLabel(flaskParser.ReturnStmtLabelContext ctx) { }
+	@Override public void exitExprStmt(flaskParser.ExprStmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterReturnStmtEmptyLabel(flaskParser.ReturnStmtEmptyLabelContext ctx) { }
+	@Override public void enterExpression(flaskParser.ExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitReturnStmtEmptyLabel(flaskParser.ReturnStmtEmptyLabelContext ctx) { }
+	@Override public void exitExpression(flaskParser.ExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprStmtLabel(flaskParser.ExprStmtLabelContext ctx) { }
+	@Override public void enterComparison(flaskParser.ComparisonContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprStmtLabel(flaskParser.ExprStmtLabelContext ctx) { }
+	@Override public void exitComparison(flaskParser.ComparisonContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExpressionLabel(flaskParser.ExpressionLabelContext ctx) { }
+	@Override public void enterArith_expr(flaskParser.Arith_exprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExpressionLabel(flaskParser.ExpressionLabelContext ctx) { }
+	@Override public void exitArith_expr(flaskParser.Arith_exprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterComparisonLabel(flaskParser.ComparisonLabelContext ctx) { }
+	@Override public void enterTerm(flaskParser.TermContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitComparisonLabel(flaskParser.ComparisonLabelContext ctx) { }
+	@Override public void exitTerm(flaskParser.TermContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterArithExprLabel(flaskParser.ArithExprLabelContext ctx) { }
+	@Override public void enterFactor(flaskParser.FactorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitArithExprLabel(flaskParser.ArithExprLabelContext ctx) { }
+	@Override public void exitFactor(flaskParser.FactorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTermLabel(flaskParser.TermLabelContext ctx) { }
+	@Override public void enterIdentifierPrimary(flaskParser.IdentifierPrimaryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTermLabel(flaskParser.TermLabelContext ctx) { }
+	@Override public void exitIdentifierPrimary(flaskParser.IdentifierPrimaryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFactorLabel(flaskParser.FactorLabelContext ctx) { }
+	@Override public void enterNumberPrimary(flaskParser.NumberPrimaryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFactorLabel(flaskParser.FactorLabelContext ctx) { }
+	@Override public void exitNumberPrimary(flaskParser.NumberPrimaryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrimaryIdLabel(flaskParser.PrimaryIdLabelContext ctx) { }
+	@Override public void enterStringPrimary(flaskParser.StringPrimaryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrimaryIdLabel(flaskParser.PrimaryIdLabelContext ctx) { }
+	@Override public void exitStringPrimary(flaskParser.StringPrimaryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrimaryNumberLabel(flaskParser.PrimaryNumberLabelContext ctx) { }
+	@Override public void enterTruePrimary(flaskParser.TruePrimaryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrimaryNumberLabel(flaskParser.PrimaryNumberLabelContext ctx) { }
+	@Override public void exitTruePrimary(flaskParser.TruePrimaryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrimaryStringLabel(flaskParser.PrimaryStringLabelContext ctx) { }
+	@Override public void enterFalsePrimary(flaskParser.FalsePrimaryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrimaryStringLabel(flaskParser.PrimaryStringLabelContext ctx) { }
+	@Override public void exitFalsePrimary(flaskParser.FalsePrimaryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrimaryTrueLabel(flaskParser.PrimaryTrueLabelContext ctx) { }
+	@Override public void enterNonePrimary(flaskParser.NonePrimaryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrimaryTrueLabel(flaskParser.PrimaryTrueLabelContext ctx) { }
+	@Override public void exitNonePrimary(flaskParser.NonePrimaryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrimaryFalseLabel(flaskParser.PrimaryFalseLabelContext ctx) { }
+	@Override public void enterParenPrimary(flaskParser.ParenPrimaryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrimaryFalseLabel(flaskParser.PrimaryFalseLabelContext ctx) { }
+	@Override public void exitParenPrimary(flaskParser.ParenPrimaryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrimaryNoneLabel(flaskParser.PrimaryNoneLabelContext ctx) { }
+	@Override public void enterListPrimary(flaskParser.ListPrimaryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrimaryNoneLabel(flaskParser.PrimaryNoneLabelContext ctx) { }
+	@Override public void exitListPrimary(flaskParser.ListPrimaryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrimaryParenLabel(flaskParser.PrimaryParenLabelContext ctx) { }
+	@Override public void enterDictPrimary(flaskParser.DictPrimaryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrimaryParenLabel(flaskParser.PrimaryParenLabelContext ctx) { }
+	@Override public void exitDictPrimary(flaskParser.DictPrimaryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrimaryListLabel(flaskParser.PrimaryListLabelContext ctx) { }
+	@Override public void enterTrailer(flaskParser.TrailerContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrimaryListLabel(flaskParser.PrimaryListLabelContext ctx) { }
+	@Override public void exitTrailer(flaskParser.TrailerContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrimaryDictLabel(flaskParser.PrimaryDictLabelContext ctx) { }
+	@Override public void enterArgumentList(flaskParser.ArgumentListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrimaryDictLabel(flaskParser.PrimaryDictLabelContext ctx) { }
+	@Override public void exitArgumentList(flaskParser.ArgumentListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTrailerCallLabel(flaskParser.TrailerCallLabelContext ctx) { }
+	@Override public void enterArgument(flaskParser.ArgumentContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTrailerCallLabel(flaskParser.TrailerCallLabelContext ctx) { }
+	@Override public void exitArgument(flaskParser.ArgumentContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTrailerSubscriptLabel(flaskParser.TrailerSubscriptLabelContext ctx) { }
+	@Override public void enterIgn(flaskParser.IgnContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTrailerSubscriptLabel(flaskParser.TrailerSubscriptLabelContext ctx) { }
+	@Override public void exitIgn(flaskParser.IgnContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTrailerAttrLabel(flaskParser.TrailerAttrLabelContext ctx) { }
+	@Override public void enterListLiteral(flaskParser.ListLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTrailerAttrLabel(flaskParser.TrailerAttrLabelContext ctx) { }
+	@Override public void exitListLiteral(flaskParser.ListLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterArgumentListLabel(flaskParser.ArgumentListLabelContext ctx) { }
+	@Override public void enterDictLiteral(flaskParser.DictLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitArgumentListLabel(flaskParser.ArgumentListLabelContext ctx) { }
+	@Override public void exitDictLiteral(flaskParser.DictLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterArgumentKeywordLabel(flaskParser.ArgumentKeywordLabelContext ctx) { }
+	@Override public void enterDictEntry(flaskParser.DictEntryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitArgumentKeywordLabel(flaskParser.ArgumentKeywordLabelContext ctx) { }
+	@Override public void exitDictEntry(flaskParser.DictEntryContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterArgumentPositionalLabel(flaskParser.ArgumentPositionalLabelContext ctx) { }
+	@Override public void enterDotted_name(flaskParser.Dotted_nameContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitArgumentPositionalLabel(flaskParser.ArgumentPositionalLabelContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterIgnLabel(flaskParser.IgnLabelContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitIgnLabel(flaskParser.IgnLabelContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterListLiteralLabel(flaskParser.ListLiteralLabelContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitListLiteralLabel(flaskParser.ListLiteralLabelContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterDictLiteralLabel(flaskParser.DictLiteralLabelContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitDictLiteralLabel(flaskParser.DictLiteralLabelContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterDictEntryLabel(flaskParser.DictEntryLabelContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitDictEntryLabel(flaskParser.DictEntryLabelContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterDottedNameLabel(flaskParser.DottedNameLabelContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitDottedNameLabel(flaskParser.DottedNameLabelContext ctx) { }
+	@Override public void exitDotted_name(flaskParser.Dotted_nameContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

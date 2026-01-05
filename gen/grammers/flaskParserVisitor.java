@@ -1,4 +1,4 @@
-// Generated from C:/Users/Heba2005/OneDrive/سطح المكتب/compiler2/grammers/flaskParser.g4 by ANTLR 4.13.2
+// Generated from C:/Users/techrepair/IdeaProjects/compiler2/compiler2/grammers/flaskParser.g4 by ANTLR 4.13.2
 package grammers;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -11,54 +11,45 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface flaskParserVisitor<T> extends ParseTreeVisitor<T> {
 	/**
-	 * Visit a parse tree produced by the {@code programLabel}
-	 * labeled alternative in {@link flaskParser#program}.
+	 * Visit a parse tree produced by {@link flaskParser#program}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitProgramLabel(flaskParser.ProgramLabelContext ctx);
+	T visitProgram(flaskParser.ProgramContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code statementSimpleLabel}
-	 * labeled alternative in {@link flaskParser#statement}.
+	 * Visit a parse tree produced by {@link flaskParser#statement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitStatementSimpleLabel(flaskParser.StatementSimpleLabelContext ctx);
+	T visitStatement(flaskParser.StatementContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code statementCompoundLabel}
-	 * labeled alternative in {@link flaskParser#statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitStatementCompoundLabel(flaskParser.StatementCompoundLabelContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code simpleImportLabel}
+	 * Visit a parse tree produced by the {@code importStmtRule}
 	 * labeled alternative in {@link flaskParser#simple_stmt}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSimpleImportLabel(flaskParser.SimpleImportLabelContext ctx);
+	T visitImportStmtRule(flaskParser.ImportStmtRuleContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code simpleAssignLabel}
+	 * Visit a parse tree produced by the {@code assignStmtRule}
 	 * labeled alternative in {@link flaskParser#simple_stmt}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSimpleAssignLabel(flaskParser.SimpleAssignLabelContext ctx);
+	T visitAssignStmtRule(flaskParser.AssignStmtRuleContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code simpleReturnLabel}
+	 * Visit a parse tree produced by the {@code returnStmtRule}
 	 * labeled alternative in {@link flaskParser#simple_stmt}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSimpleReturnLabel(flaskParser.SimpleReturnLabelContext ctx);
+	T visitReturnStmtRule(flaskParser.ReturnStmtRuleContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code simpleExprLabel}
+	 * Visit a parse tree produced by the {@code expressionStmtRule}
 	 * labeled alternative in {@link flaskParser#simple_stmt}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSimpleExprLabel(flaskParser.SimpleExprLabelContext ctx);
+	T visitExpressionStmtRule(flaskParser.ExpressionStmtRuleContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link flaskParser#stmt_end}.
 	 * @param ctx the parse tree
@@ -66,297 +57,237 @@ public interface flaskParserVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitStmt_end(flaskParser.Stmt_endContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code compoundFunctionLabel}
+	 * Visit a parse tree produced by the {@code functionDefRule}
 	 * labeled alternative in {@link flaskParser#compound_stmt}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCompoundFunctionLabel(flaskParser.CompoundFunctionLabelContext ctx);
+	T visitFunctionDefRule(flaskParser.FunctionDefRuleContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code compoundIfLabel}
+	 * Visit a parse tree produced by the {@code ifStmtRule}
 	 * labeled alternative in {@link flaskParser#compound_stmt}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCompoundIfLabel(flaskParser.CompoundIfLabelContext ctx);
+	T visitIfStmtRule(flaskParser.IfStmtRuleContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code compoundForLabel}
+	 * Visit a parse tree produced by the {@code forStmtRule}
 	 * labeled alternative in {@link flaskParser#compound_stmt}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCompoundForLabel(flaskParser.CompoundForLabelContext ctx);
+	T visitForStmtRule(flaskParser.ForStmtRuleContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code importFromLabel}
-	 * labeled alternative in {@link flaskParser#importStmt}.
+	 * Visit a parse tree produced by {@link flaskParser#importStmt}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitImportFromLabel(flaskParser.ImportFromLabelContext ctx);
+	T visitImportStmt(flaskParser.ImportStmtContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code importSimpleLabel}
-	 * labeled alternative in {@link flaskParser#importStmt}.
+	 * Visit a parse tree produced by {@link flaskParser#importList}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitImportSimpleLabel(flaskParser.ImportSimpleLabelContext ctx);
+	T visitImportList(flaskParser.ImportListContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code importListLabel}
-	 * labeled alternative in {@link flaskParser#importList}.
+	 * Visit a parse tree produced by {@link flaskParser#importItem}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitImportListLabel(flaskParser.ImportListLabelContext ctx);
+	T visitImportItem(flaskParser.ImportItemContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code importItemLabel}
-	 * labeled alternative in {@link flaskParser#importItem}.
+	 * Visit a parse tree produced by {@link flaskParser#functionDef}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitImportItemLabel(flaskParser.ImportItemLabelContext ctx);
+	T visitFunctionDef(flaskParser.FunctionDefContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code functionDefLabel}
-	 * labeled alternative in {@link flaskParser#functionDef}.
+	 * Visit a parse tree produced by {@link flaskParser#decorator}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitFunctionDefLabel(flaskParser.FunctionDefLabelContext ctx);
+	T visitDecorator(flaskParser.DecoratorContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code decoratorLabel}
-	 * labeled alternative in {@link flaskParser#decorator}.
+	 * Visit a parse tree produced by {@link flaskParser#paramList}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitDecoratorLabel(flaskParser.DecoratorLabelContext ctx);
+	T visitParamList(flaskParser.ParamListContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code paramListLabel}
-	 * labeled alternative in {@link flaskParser#paramList}.
+	 * Visit a parse tree produced by {@link flaskParser#block}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitParamListLabel(flaskParser.ParamListLabelContext ctx);
+	T visitBlock(flaskParser.BlockContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code blockLabel}
-	 * labeled alternative in {@link flaskParser#block}.
+	 * Visit a parse tree produced by {@link flaskParser#ifStmt}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitBlockLabel(flaskParser.BlockLabelContext ctx);
+	T visitIfStmt(flaskParser.IfStmtContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code ifStmtLabel}
-	 * labeled alternative in {@link flaskParser#ifStmt}.
+	 * Visit a parse tree produced by {@link flaskParser#forStmt}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitIfStmtLabel(flaskParser.IfStmtLabelContext ctx);
+	T visitForStmt(flaskParser.ForStmtContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code forStmtLabel}
-	 * labeled alternative in {@link flaskParser#forStmt}.
+	 * Visit a parse tree produced by {@link flaskParser#assignStmt}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitForStmtLabel(flaskParser.ForStmtLabelContext ctx);
+	T visitAssignStmt(flaskParser.AssignStmtContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code assignStmtLabel}
-	 * labeled alternative in {@link flaskParser#assignStmt}.
+	 * Visit a parse tree produced by {@link flaskParser#returnStmt}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAssignStmtLabel(flaskParser.AssignStmtLabelContext ctx);
+	T visitReturnStmt(flaskParser.ReturnStmtContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code returnStmtLabel}
-	 * labeled alternative in {@link flaskParser#returnStmt}.
+	 * Visit a parse tree produced by {@link flaskParser#exprStmt}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitReturnStmtLabel(flaskParser.ReturnStmtLabelContext ctx);
+	T visitExprStmt(flaskParser.ExprStmtContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code returnStmtEmptyLabel}
-	 * labeled alternative in {@link flaskParser#returnStmt}.
+	 * Visit a parse tree produced by {@link flaskParser#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitReturnStmtEmptyLabel(flaskParser.ReturnStmtEmptyLabelContext ctx);
+	T visitExpression(flaskParser.ExpressionContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code exprStmtLabel}
-	 * labeled alternative in {@link flaskParser#exprStmt}.
+	 * Visit a parse tree produced by {@link flaskParser#comparison}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitExprStmtLabel(flaskParser.ExprStmtLabelContext ctx);
+	T visitComparison(flaskParser.ComparisonContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code expressionLabel}
-	 * labeled alternative in {@link flaskParser#expression}.
+	 * Visit a parse tree produced by {@link flaskParser#arith_expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitExpressionLabel(flaskParser.ExpressionLabelContext ctx);
+	T visitArith_expr(flaskParser.Arith_exprContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code comparisonLabel}
-	 * labeled alternative in {@link flaskParser#comparison}.
+	 * Visit a parse tree produced by {@link flaskParser#term}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitComparisonLabel(flaskParser.ComparisonLabelContext ctx);
+	T visitTerm(flaskParser.TermContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code arithExprLabel}
-	 * labeled alternative in {@link flaskParser#arith_expr}.
+	 * Visit a parse tree produced by {@link flaskParser#factor}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitArithExprLabel(flaskParser.ArithExprLabelContext ctx);
+	T visitFactor(flaskParser.FactorContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code termLabel}
-	 * labeled alternative in {@link flaskParser#term}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitTermLabel(flaskParser.TermLabelContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code factorLabel}
-	 * labeled alternative in {@link flaskParser#factor}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFactorLabel(flaskParser.FactorLabelContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code primaryIdLabel}
+	 * Visit a parse tree produced by the {@code identifierPrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPrimaryIdLabel(flaskParser.PrimaryIdLabelContext ctx);
+	T visitIdentifierPrimary(flaskParser.IdentifierPrimaryContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code primaryNumberLabel}
+	 * Visit a parse tree produced by the {@code numberPrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPrimaryNumberLabel(flaskParser.PrimaryNumberLabelContext ctx);
+	T visitNumberPrimary(flaskParser.NumberPrimaryContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code primaryStringLabel}
+	 * Visit a parse tree produced by the {@code stringPrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPrimaryStringLabel(flaskParser.PrimaryStringLabelContext ctx);
+	T visitStringPrimary(flaskParser.StringPrimaryContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code primaryTrueLabel}
+	 * Visit a parse tree produced by the {@code truePrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPrimaryTrueLabel(flaskParser.PrimaryTrueLabelContext ctx);
+	T visitTruePrimary(flaskParser.TruePrimaryContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code primaryFalseLabel}
+	 * Visit a parse tree produced by the {@code falsePrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPrimaryFalseLabel(flaskParser.PrimaryFalseLabelContext ctx);
+	T visitFalsePrimary(flaskParser.FalsePrimaryContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code primaryNoneLabel}
+	 * Visit a parse tree produced by the {@code nonePrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPrimaryNoneLabel(flaskParser.PrimaryNoneLabelContext ctx);
+	T visitNonePrimary(flaskParser.NonePrimaryContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code primaryParenLabel}
+	 * Visit a parse tree produced by the {@code parenPrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPrimaryParenLabel(flaskParser.PrimaryParenLabelContext ctx);
+	T visitParenPrimary(flaskParser.ParenPrimaryContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code primaryListLabel}
+	 * Visit a parse tree produced by the {@code listPrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPrimaryListLabel(flaskParser.PrimaryListLabelContext ctx);
+	T visitListPrimary(flaskParser.ListPrimaryContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code primaryDictLabel}
+	 * Visit a parse tree produced by the {@code dictPrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPrimaryDictLabel(flaskParser.PrimaryDictLabelContext ctx);
+	T visitDictPrimary(flaskParser.DictPrimaryContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code trailerCallLabel}
-	 * labeled alternative in {@link flaskParser#trailer}.
+	 * Visit a parse tree produced by {@link flaskParser#trailer}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitTrailerCallLabel(flaskParser.TrailerCallLabelContext ctx);
+	T visitTrailer(flaskParser.TrailerContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code trailerSubscriptLabel}
-	 * labeled alternative in {@link flaskParser#trailer}.
+	 * Visit a parse tree produced by {@link flaskParser#argumentList}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitTrailerSubscriptLabel(flaskParser.TrailerSubscriptLabelContext ctx);
+	T visitArgumentList(flaskParser.ArgumentListContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code trailerAttrLabel}
-	 * labeled alternative in {@link flaskParser#trailer}.
+	 * Visit a parse tree produced by {@link flaskParser#argument}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitTrailerAttrLabel(flaskParser.TrailerAttrLabelContext ctx);
+	T visitArgument(flaskParser.ArgumentContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code argumentListLabel}
-	 * labeled alternative in {@link flaskParser#argumentList}.
+	 * Visit a parse tree produced by {@link flaskParser#ign}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitArgumentListLabel(flaskParser.ArgumentListLabelContext ctx);
+	T visitIgn(flaskParser.IgnContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code argumentKeywordLabel}
-	 * labeled alternative in {@link flaskParser#argument}.
+	 * Visit a parse tree produced by {@link flaskParser#listLiteral}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitArgumentKeywordLabel(flaskParser.ArgumentKeywordLabelContext ctx);
+	T visitListLiteral(flaskParser.ListLiteralContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code argumentPositionalLabel}
-	 * labeled alternative in {@link flaskParser#argument}.
+	 * Visit a parse tree produced by {@link flaskParser#dictLiteral}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitArgumentPositionalLabel(flaskParser.ArgumentPositionalLabelContext ctx);
+	T visitDictLiteral(flaskParser.DictLiteralContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code ignLabel}
-	 * labeled alternative in {@link flaskParser#ign}.
+	 * Visit a parse tree produced by {@link flaskParser#dictEntry}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitIgnLabel(flaskParser.IgnLabelContext ctx);
+	T visitDictEntry(flaskParser.DictEntryContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code listLiteralLabel}
-	 * labeled alternative in {@link flaskParser#listLiteral}.
+	 * Visit a parse tree produced by {@link flaskParser#dotted_name}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitListLiteralLabel(flaskParser.ListLiteralLabelContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code dictLiteralLabel}
-	 * labeled alternative in {@link flaskParser#dictLiteral}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitDictLiteralLabel(flaskParser.DictLiteralLabelContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code dictEntryLabel}
-	 * labeled alternative in {@link flaskParser#dictEntry}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitDictEntryLabel(flaskParser.DictEntryLabelContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code dottedNameLabel}
-	 * labeled alternative in {@link flaskParser#dotted_name}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitDottedNameLabel(flaskParser.DottedNameLabelContext ctx);
+	T visitDotted_name(flaskParser.Dotted_nameContext ctx);
 }

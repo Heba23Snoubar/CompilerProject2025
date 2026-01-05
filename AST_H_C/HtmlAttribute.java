@@ -1,6 +1,6 @@
 package AST_H_C;
 
-public class HtmlAttribute extends Node {
+public class HtmlAttribute extends Node{
 
     private String attributeName;
     private String attributeValue;
@@ -29,9 +29,9 @@ public class HtmlAttribute extends Node {
 
     @Override
     public String toString() {
-        return "HtmlAttribute{" +
-                "Name='" + Name + '\'' +
-                ", numberOfLine=" + numberOfLine +
+        return "\n\tHtmlAttribute{" +
+                "\n\t\tName='" + attributeName + '\'' +
+                "\n\t\t, numberOfLine=" + numberOfLine +
                 '}';
     }
 }

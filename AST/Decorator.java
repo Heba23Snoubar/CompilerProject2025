@@ -21,14 +21,19 @@ package AST;
 import java.util.List;
 
 public class Decorator extends AstNode {
-
+private String name ;
     public Decorator(String name, List<AstNode> args, int line) {
         super("Decorator(@" + name + ")", line);
+        this.name=name;
 
         if (args != null) {
             for (AstNode arg : args) {
                 addChild(arg);
             }
         }
+    }
+
+    public String getName() {
+        return name;
     }
 }

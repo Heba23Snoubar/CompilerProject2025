@@ -4,9 +4,6 @@ options {
     tokenVocab = htmlLexer;
 }
 
-//>>>>>>>>>>>>>>>>>>>>>>>>> HTML <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-
 
 htmlDocument
     : HTML_DOCUMENT? htmlElement* EOF
@@ -32,34 +29,15 @@ htmlAttribute
     ;
 
 
-//htmlDocument: HTML_DOCUMENT htmlElement* EOF ;
-//htmlElement : OPEN_TAG TAG_NAME htmlAttribute*  CLOSE_TAG htmlContent? (OPEN_TAG TAG_SLASH TAG_NAME  CLOSE_TAG)?
-//                |cssStyle
-//                |jinjaExpression
-//                |jinjaTag
-//                |jinjaComment;
-//htmlContent : (HTML_TEXT | htmlElement|jinjaExpression | jinjaTag | jinjaComment)* ;
-//htmlAttribute: ATTR_NAME (TAG_EQUALS ATTRIBUTE_VALUE)? ;
-
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> CSS <<<<<<<<<<<<<<<<<<<<<<<<<<<<
 cssStyle :STYLE_OPEN stylesheet STYLE_CLOSE;
 
 stylesheet: ruleset* ;
 
 ruleset : CSS_SELECTOR OPENBRACE properties* CLOSEBRACE;
 
-//selector : (ID_SELECTOR|CLASS_SELECTOR|TAG_SELECTOR);
-
 properties : PROPERTY COLON_CSS value SEMICOLON_CSS;
 
 value :VALUE (COMMA_CSS VALUE)*;
-
-
-
-
-//========================> JINJA2 <========================
-
-
 
 
 
@@ -74,7 +52,6 @@ jinjaTag
 
 jinjaComment: COMMENT_START COMMENT_TEXT? COMMENT_END;
 
-// ============ التعبيرات (EXPRESSIONS) ============
 
 expr:
     literal                                                             # literalExpr
@@ -108,19 +85,6 @@ literal:
     | LBRACK (expr (COMMA expr)*)? RBRACK                       # listLiteral
     ;
 
-// ============ العلامات (TAGS) ============
-
-
-//tagContent:
-//    ifTag
-//    | forTag;
-//
-//ifTag: IF expr (tagBody)? (ELIF expr (tagBody)?)* (ELSE (tagBody)?)? ENDIF;
-//forTag: FOR ID IN expr (tagBody)? ENDFOR;
-//
-//
-//tagBody: (HTML_TEXT | jinjaExpression | jinjaTag)*;
-
 
 
 jinjaSingleTag
@@ -133,8 +97,6 @@ singleJinjaTagContent
     | EXTENDS STRING
 
     ;
-
-// العلامات المركبة (التي تحتاج body)
 firstBlockJinjaTagContent
     : IF expr
     | ELIF expr

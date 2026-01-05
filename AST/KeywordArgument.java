@@ -34,4 +34,12 @@ public class KeywordArgument extends AstNode {
 
         addChild(value);
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public AstNode getValue() {
+        return value;
+    }
 }

@@ -1,4 +1,4 @@
-// Generated from C:/Users/Heba2005/OneDrive/سطح المكتب/compiler2/grammers/flaskParser.g4 by ANTLR 4.13.2
+// Generated from C:/Users/techrepair/IdeaProjects/compiler2/compiler2/grammers/flaskParser.g4 by ANTLR 4.13.2
 package grammers;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -8,89 +8,73 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface flaskParserListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by the {@code programLabel}
-	 * labeled alternative in {@link flaskParser#program}.
+	 * Enter a parse tree produced by {@link flaskParser#program}.
 	 * @param ctx the parse tree
 	 */
-	void enterProgramLabel(flaskParser.ProgramLabelContext ctx);
+	void enterProgram(flaskParser.ProgramContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code programLabel}
-	 * labeled alternative in {@link flaskParser#program}.
+	 * Exit a parse tree produced by {@link flaskParser#program}.
 	 * @param ctx the parse tree
 	 */
-	void exitProgramLabel(flaskParser.ProgramLabelContext ctx);
+	void exitProgram(flaskParser.ProgramContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code statementSimpleLabel}
-	 * labeled alternative in {@link flaskParser#statement}.
+	 * Enter a parse tree produced by {@link flaskParser#statement}.
 	 * @param ctx the parse tree
 	 */
-	void enterStatementSimpleLabel(flaskParser.StatementSimpleLabelContext ctx);
+	void enterStatement(flaskParser.StatementContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code statementSimpleLabel}
-	 * labeled alternative in {@link flaskParser#statement}.
+	 * Exit a parse tree produced by {@link flaskParser#statement}.
 	 * @param ctx the parse tree
 	 */
-	void exitStatementSimpleLabel(flaskParser.StatementSimpleLabelContext ctx);
+	void exitStatement(flaskParser.StatementContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code statementCompoundLabel}
-	 * labeled alternative in {@link flaskParser#statement}.
-	 * @param ctx the parse tree
-	 */
-	void enterStatementCompoundLabel(flaskParser.StatementCompoundLabelContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code statementCompoundLabel}
-	 * labeled alternative in {@link flaskParser#statement}.
-	 * @param ctx the parse tree
-	 */
-	void exitStatementCompoundLabel(flaskParser.StatementCompoundLabelContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code simpleImportLabel}
+	 * Enter a parse tree produced by the {@code importStmtRule}
 	 * labeled alternative in {@link flaskParser#simple_stmt}.
 	 * @param ctx the parse tree
 	 */
-	void enterSimpleImportLabel(flaskParser.SimpleImportLabelContext ctx);
+	void enterImportStmtRule(flaskParser.ImportStmtRuleContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code simpleImportLabel}
+	 * Exit a parse tree produced by the {@code importStmtRule}
 	 * labeled alternative in {@link flaskParser#simple_stmt}.
 	 * @param ctx the parse tree
 	 */
-	void exitSimpleImportLabel(flaskParser.SimpleImportLabelContext ctx);
+	void exitImportStmtRule(flaskParser.ImportStmtRuleContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code simpleAssignLabel}
+	 * Enter a parse tree produced by the {@code assignStmtRule}
 	 * labeled alternative in {@link flaskParser#simple_stmt}.
 	 * @param ctx the parse tree
 	 */
-	void enterSimpleAssignLabel(flaskParser.SimpleAssignLabelContext ctx);
+	void enterAssignStmtRule(flaskParser.AssignStmtRuleContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code simpleAssignLabel}
+	 * Exit a parse tree produced by the {@code assignStmtRule}
 	 * labeled alternative in {@link flaskParser#simple_stmt}.
 	 * @param ctx the parse tree
 	 */
-	void exitSimpleAssignLabel(flaskParser.SimpleAssignLabelContext ctx);
+	void exitAssignStmtRule(flaskParser.AssignStmtRuleContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code simpleReturnLabel}
+	 * Enter a parse tree produced by the {@code returnStmtRule}
 	 * labeled alternative in {@link flaskParser#simple_stmt}.
 	 * @param ctx the parse tree
 	 */
-	void enterSimpleReturnLabel(flaskParser.SimpleReturnLabelContext ctx);
+	void enterReturnStmtRule(flaskParser.ReturnStmtRuleContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code simpleReturnLabel}
+	 * Exit a parse tree produced by the {@code returnStmtRule}
 	 * labeled alternative in {@link flaskParser#simple_stmt}.
 	 * @param ctx the parse tree
 	 */
-	void exitSimpleReturnLabel(flaskParser.SimpleReturnLabelContext ctx);
+	void exitReturnStmtRule(flaskParser.ReturnStmtRuleContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code simpleExprLabel}
+	 * Enter a parse tree produced by the {@code expressionStmtRule}
 	 * labeled alternative in {@link flaskParser#simple_stmt}.
 	 * @param ctx the parse tree
 	 */
-	void enterSimpleExprLabel(flaskParser.SimpleExprLabelContext ctx);
+	void enterExpressionStmtRule(flaskParser.ExpressionStmtRuleContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code simpleExprLabel}
+	 * Exit a parse tree produced by the {@code expressionStmtRule}
 	 * labeled alternative in {@link flaskParser#simple_stmt}.
 	 * @param ctx the parse tree
 	 */
-	void exitSimpleExprLabel(flaskParser.SimpleExprLabelContext ctx);
+	void exitExpressionStmtRule(flaskParser.ExpressionStmtRuleContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link flaskParser#stmt_end}.
 	 * @param ctx the parse tree
@@ -102,507 +86,397 @@ public interface flaskParserListener extends ParseTreeListener {
 	 */
 	void exitStmt_end(flaskParser.Stmt_endContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code compoundFunctionLabel}
+	 * Enter a parse tree produced by the {@code functionDefRule}
 	 * labeled alternative in {@link flaskParser#compound_stmt}.
 	 * @param ctx the parse tree
 	 */
-	void enterCompoundFunctionLabel(flaskParser.CompoundFunctionLabelContext ctx);
+	void enterFunctionDefRule(flaskParser.FunctionDefRuleContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code compoundFunctionLabel}
+	 * Exit a parse tree produced by the {@code functionDefRule}
 	 * labeled alternative in {@link flaskParser#compound_stmt}.
 	 * @param ctx the parse tree
 	 */
-	void exitCompoundFunctionLabel(flaskParser.CompoundFunctionLabelContext ctx);
+	void exitFunctionDefRule(flaskParser.FunctionDefRuleContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code compoundIfLabel}
+	 * Enter a parse tree produced by the {@code ifStmtRule}
 	 * labeled alternative in {@link flaskParser#compound_stmt}.
 	 * @param ctx the parse tree
 	 */
-	void enterCompoundIfLabel(flaskParser.CompoundIfLabelContext ctx);
+	void enterIfStmtRule(flaskParser.IfStmtRuleContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code compoundIfLabel}
+	 * Exit a parse tree produced by the {@code ifStmtRule}
 	 * labeled alternative in {@link flaskParser#compound_stmt}.
 	 * @param ctx the parse tree
 	 */
-	void exitCompoundIfLabel(flaskParser.CompoundIfLabelContext ctx);
+	void exitIfStmtRule(flaskParser.IfStmtRuleContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code compoundForLabel}
+	 * Enter a parse tree produced by the {@code forStmtRule}
 	 * labeled alternative in {@link flaskParser#compound_stmt}.
 	 * @param ctx the parse tree
 	 */
-	void enterCompoundForLabel(flaskParser.CompoundForLabelContext ctx);
+	void enterForStmtRule(flaskParser.ForStmtRuleContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code compoundForLabel}
+	 * Exit a parse tree produced by the {@code forStmtRule}
 	 * labeled alternative in {@link flaskParser#compound_stmt}.
 	 * @param ctx the parse tree
 	 */
-	void exitCompoundForLabel(flaskParser.CompoundForLabelContext ctx);
+	void exitForStmtRule(flaskParser.ForStmtRuleContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code importFromLabel}
-	 * labeled alternative in {@link flaskParser#importStmt}.
+	 * Enter a parse tree produced by {@link flaskParser#importStmt}.
 	 * @param ctx the parse tree
 	 */
-	void enterImportFromLabel(flaskParser.ImportFromLabelContext ctx);
+	void enterImportStmt(flaskParser.ImportStmtContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code importFromLabel}
-	 * labeled alternative in {@link flaskParser#importStmt}.
+	 * Exit a parse tree produced by {@link flaskParser#importStmt}.
 	 * @param ctx the parse tree
 	 */
-	void exitImportFromLabel(flaskParser.ImportFromLabelContext ctx);
+	void exitImportStmt(flaskParser.ImportStmtContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code importSimpleLabel}
-	 * labeled alternative in {@link flaskParser#importStmt}.
+	 * Enter a parse tree produced by {@link flaskParser#importList}.
 	 * @param ctx the parse tree
 	 */
-	void enterImportSimpleLabel(flaskParser.ImportSimpleLabelContext ctx);
+	void enterImportList(flaskParser.ImportListContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code importSimpleLabel}
-	 * labeled alternative in {@link flaskParser#importStmt}.
+	 * Exit a parse tree produced by {@link flaskParser#importList}.
 	 * @param ctx the parse tree
 	 */
-	void exitImportSimpleLabel(flaskParser.ImportSimpleLabelContext ctx);
+	void exitImportList(flaskParser.ImportListContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code importListLabel}
-	 * labeled alternative in {@link flaskParser#importList}.
+	 * Enter a parse tree produced by {@link flaskParser#importItem}.
 	 * @param ctx the parse tree
 	 */
-	void enterImportListLabel(flaskParser.ImportListLabelContext ctx);
+	void enterImportItem(flaskParser.ImportItemContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code importListLabel}
-	 * labeled alternative in {@link flaskParser#importList}.
+	 * Exit a parse tree produced by {@link flaskParser#importItem}.
 	 * @param ctx the parse tree
 	 */
-	void exitImportListLabel(flaskParser.ImportListLabelContext ctx);
+	void exitImportItem(flaskParser.ImportItemContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code importItemLabel}
-	 * labeled alternative in {@link flaskParser#importItem}.
+	 * Enter a parse tree produced by {@link flaskParser#functionDef}.
 	 * @param ctx the parse tree
 	 */
-	void enterImportItemLabel(flaskParser.ImportItemLabelContext ctx);
+	void enterFunctionDef(flaskParser.FunctionDefContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code importItemLabel}
-	 * labeled alternative in {@link flaskParser#importItem}.
+	 * Exit a parse tree produced by {@link flaskParser#functionDef}.
 	 * @param ctx the parse tree
 	 */
-	void exitImportItemLabel(flaskParser.ImportItemLabelContext ctx);
+	void exitFunctionDef(flaskParser.FunctionDefContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code functionDefLabel}
-	 * labeled alternative in {@link flaskParser#functionDef}.
+	 * Enter a parse tree produced by {@link flaskParser#decorator}.
 	 * @param ctx the parse tree
 	 */
-	void enterFunctionDefLabel(flaskParser.FunctionDefLabelContext ctx);
+	void enterDecorator(flaskParser.DecoratorContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code functionDefLabel}
-	 * labeled alternative in {@link flaskParser#functionDef}.
+	 * Exit a parse tree produced by {@link flaskParser#decorator}.
 	 * @param ctx the parse tree
 	 */
-	void exitFunctionDefLabel(flaskParser.FunctionDefLabelContext ctx);
+	void exitDecorator(flaskParser.DecoratorContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code decoratorLabel}
-	 * labeled alternative in {@link flaskParser#decorator}.
+	 * Enter a parse tree produced by {@link flaskParser#paramList}.
 	 * @param ctx the parse tree
 	 */
-	void enterDecoratorLabel(flaskParser.DecoratorLabelContext ctx);
+	void enterParamList(flaskParser.ParamListContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code decoratorLabel}
-	 * labeled alternative in {@link flaskParser#decorator}.
+	 * Exit a parse tree produced by {@link flaskParser#paramList}.
 	 * @param ctx the parse tree
 	 */
-	void exitDecoratorLabel(flaskParser.DecoratorLabelContext ctx);
+	void exitParamList(flaskParser.ParamListContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code paramListLabel}
-	 * labeled alternative in {@link flaskParser#paramList}.
+	 * Enter a parse tree produced by {@link flaskParser#block}.
 	 * @param ctx the parse tree
 	 */
-	void enterParamListLabel(flaskParser.ParamListLabelContext ctx);
+	void enterBlock(flaskParser.BlockContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code paramListLabel}
-	 * labeled alternative in {@link flaskParser#paramList}.
+	 * Exit a parse tree produced by {@link flaskParser#block}.
 	 * @param ctx the parse tree
 	 */
-	void exitParamListLabel(flaskParser.ParamListLabelContext ctx);
+	void exitBlock(flaskParser.BlockContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code blockLabel}
-	 * labeled alternative in {@link flaskParser#block}.
+	 * Enter a parse tree produced by {@link flaskParser#ifStmt}.
 	 * @param ctx the parse tree
 	 */
-	void enterBlockLabel(flaskParser.BlockLabelContext ctx);
+	void enterIfStmt(flaskParser.IfStmtContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code blockLabel}
-	 * labeled alternative in {@link flaskParser#block}.
+	 * Exit a parse tree produced by {@link flaskParser#ifStmt}.
 	 * @param ctx the parse tree
 	 */
-	void exitBlockLabel(flaskParser.BlockLabelContext ctx);
+	void exitIfStmt(flaskParser.IfStmtContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code ifStmtLabel}
-	 * labeled alternative in {@link flaskParser#ifStmt}.
+	 * Enter a parse tree produced by {@link flaskParser#forStmt}.
 	 * @param ctx the parse tree
 	 */
-	void enterIfStmtLabel(flaskParser.IfStmtLabelContext ctx);
+	void enterForStmt(flaskParser.ForStmtContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code ifStmtLabel}
-	 * labeled alternative in {@link flaskParser#ifStmt}.
+	 * Exit a parse tree produced by {@link flaskParser#forStmt}.
 	 * @param ctx the parse tree
 	 */
-	void exitIfStmtLabel(flaskParser.IfStmtLabelContext ctx);
+	void exitForStmt(flaskParser.ForStmtContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code forStmtLabel}
-	 * labeled alternative in {@link flaskParser#forStmt}.
+	 * Enter a parse tree produced by {@link flaskParser#assignStmt}.
 	 * @param ctx the parse tree
 	 */
-	void enterForStmtLabel(flaskParser.ForStmtLabelContext ctx);
+	void enterAssignStmt(flaskParser.AssignStmtContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code forStmtLabel}
-	 * labeled alternative in {@link flaskParser#forStmt}.
+	 * Exit a parse tree produced by {@link flaskParser#assignStmt}.
 	 * @param ctx the parse tree
 	 */
-	void exitForStmtLabel(flaskParser.ForStmtLabelContext ctx);
+	void exitAssignStmt(flaskParser.AssignStmtContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code assignStmtLabel}
-	 * labeled alternative in {@link flaskParser#assignStmt}.
+	 * Enter a parse tree produced by {@link flaskParser#returnStmt}.
 	 * @param ctx the parse tree
 	 */
-	void enterAssignStmtLabel(flaskParser.AssignStmtLabelContext ctx);
+	void enterReturnStmt(flaskParser.ReturnStmtContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code assignStmtLabel}
-	 * labeled alternative in {@link flaskParser#assignStmt}.
+	 * Exit a parse tree produced by {@link flaskParser#returnStmt}.
 	 * @param ctx the parse tree
 	 */
-	void exitAssignStmtLabel(flaskParser.AssignStmtLabelContext ctx);
+	void exitReturnStmt(flaskParser.ReturnStmtContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code returnStmtLabel}
-	 * labeled alternative in {@link flaskParser#returnStmt}.
+	 * Enter a parse tree produced by {@link flaskParser#exprStmt}.
 	 * @param ctx the parse tree
 	 */
-	void enterReturnStmtLabel(flaskParser.ReturnStmtLabelContext ctx);
+	void enterExprStmt(flaskParser.ExprStmtContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code returnStmtLabel}
-	 * labeled alternative in {@link flaskParser#returnStmt}.
+	 * Exit a parse tree produced by {@link flaskParser#exprStmt}.
 	 * @param ctx the parse tree
 	 */
-	void exitReturnStmtLabel(flaskParser.ReturnStmtLabelContext ctx);
+	void exitExprStmt(flaskParser.ExprStmtContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code returnStmtEmptyLabel}
-	 * labeled alternative in {@link flaskParser#returnStmt}.
+	 * Enter a parse tree produced by {@link flaskParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void enterReturnStmtEmptyLabel(flaskParser.ReturnStmtEmptyLabelContext ctx);
+	void enterExpression(flaskParser.ExpressionContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code returnStmtEmptyLabel}
-	 * labeled alternative in {@link flaskParser#returnStmt}.
+	 * Exit a parse tree produced by {@link flaskParser#expression}.
 	 * @param ctx the parse tree
 	 */
-	void exitReturnStmtEmptyLabel(flaskParser.ReturnStmtEmptyLabelContext ctx);
+	void exitExpression(flaskParser.ExpressionContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code exprStmtLabel}
-	 * labeled alternative in {@link flaskParser#exprStmt}.
+	 * Enter a parse tree produced by {@link flaskParser#comparison}.
 	 * @param ctx the parse tree
 	 */
-	void enterExprStmtLabel(flaskParser.ExprStmtLabelContext ctx);
+	void enterComparison(flaskParser.ComparisonContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code exprStmtLabel}
-	 * labeled alternative in {@link flaskParser#exprStmt}.
+	 * Exit a parse tree produced by {@link flaskParser#comparison}.
 	 * @param ctx the parse tree
 	 */
-	void exitExprStmtLabel(flaskParser.ExprStmtLabelContext ctx);
+	void exitComparison(flaskParser.ComparisonContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code expressionLabel}
-	 * labeled alternative in {@link flaskParser#expression}.
+	 * Enter a parse tree produced by {@link flaskParser#arith_expr}.
 	 * @param ctx the parse tree
 	 */
-	void enterExpressionLabel(flaskParser.ExpressionLabelContext ctx);
+	void enterArith_expr(flaskParser.Arith_exprContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code expressionLabel}
-	 * labeled alternative in {@link flaskParser#expression}.
+	 * Exit a parse tree produced by {@link flaskParser#arith_expr}.
 	 * @param ctx the parse tree
 	 */
-	void exitExpressionLabel(flaskParser.ExpressionLabelContext ctx);
+	void exitArith_expr(flaskParser.Arith_exprContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code comparisonLabel}
-	 * labeled alternative in {@link flaskParser#comparison}.
+	 * Enter a parse tree produced by {@link flaskParser#term}.
 	 * @param ctx the parse tree
 	 */
-	void enterComparisonLabel(flaskParser.ComparisonLabelContext ctx);
+	void enterTerm(flaskParser.TermContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code comparisonLabel}
-	 * labeled alternative in {@link flaskParser#comparison}.
+	 * Exit a parse tree produced by {@link flaskParser#term}.
 	 * @param ctx the parse tree
 	 */
-	void exitComparisonLabel(flaskParser.ComparisonLabelContext ctx);
+	void exitTerm(flaskParser.TermContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code arithExprLabel}
-	 * labeled alternative in {@link flaskParser#arith_expr}.
+	 * Enter a parse tree produced by {@link flaskParser#factor}.
 	 * @param ctx the parse tree
 	 */
-	void enterArithExprLabel(flaskParser.ArithExprLabelContext ctx);
+	void enterFactor(flaskParser.FactorContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code arithExprLabel}
-	 * labeled alternative in {@link flaskParser#arith_expr}.
+	 * Exit a parse tree produced by {@link flaskParser#factor}.
 	 * @param ctx the parse tree
 	 */
-	void exitArithExprLabel(flaskParser.ArithExprLabelContext ctx);
+	void exitFactor(flaskParser.FactorContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code termLabel}
-	 * labeled alternative in {@link flaskParser#term}.
-	 * @param ctx the parse tree
-	 */
-	void enterTermLabel(flaskParser.TermLabelContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code termLabel}
-	 * labeled alternative in {@link flaskParser#term}.
-	 * @param ctx the parse tree
-	 */
-	void exitTermLabel(flaskParser.TermLabelContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code factorLabel}
-	 * labeled alternative in {@link flaskParser#factor}.
-	 * @param ctx the parse tree
-	 */
-	void enterFactorLabel(flaskParser.FactorLabelContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code factorLabel}
-	 * labeled alternative in {@link flaskParser#factor}.
-	 * @param ctx the parse tree
-	 */
-	void exitFactorLabel(flaskParser.FactorLabelContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code primaryIdLabel}
+	 * Enter a parse tree produced by the {@code identifierPrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrimaryIdLabel(flaskParser.PrimaryIdLabelContext ctx);
+	void enterIdentifierPrimary(flaskParser.IdentifierPrimaryContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code primaryIdLabel}
+	 * Exit a parse tree produced by the {@code identifierPrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrimaryIdLabel(flaskParser.PrimaryIdLabelContext ctx);
+	void exitIdentifierPrimary(flaskParser.IdentifierPrimaryContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code primaryNumberLabel}
+	 * Enter a parse tree produced by the {@code numberPrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrimaryNumberLabel(flaskParser.PrimaryNumberLabelContext ctx);
+	void enterNumberPrimary(flaskParser.NumberPrimaryContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code primaryNumberLabel}
+	 * Exit a parse tree produced by the {@code numberPrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrimaryNumberLabel(flaskParser.PrimaryNumberLabelContext ctx);
+	void exitNumberPrimary(flaskParser.NumberPrimaryContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code primaryStringLabel}
+	 * Enter a parse tree produced by the {@code stringPrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrimaryStringLabel(flaskParser.PrimaryStringLabelContext ctx);
+	void enterStringPrimary(flaskParser.StringPrimaryContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code primaryStringLabel}
+	 * Exit a parse tree produced by the {@code stringPrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrimaryStringLabel(flaskParser.PrimaryStringLabelContext ctx);
+	void exitStringPrimary(flaskParser.StringPrimaryContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code primaryTrueLabel}
+	 * Enter a parse tree produced by the {@code truePrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrimaryTrueLabel(flaskParser.PrimaryTrueLabelContext ctx);
+	void enterTruePrimary(flaskParser.TruePrimaryContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code primaryTrueLabel}
+	 * Exit a parse tree produced by the {@code truePrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrimaryTrueLabel(flaskParser.PrimaryTrueLabelContext ctx);
+	void exitTruePrimary(flaskParser.TruePrimaryContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code primaryFalseLabel}
+	 * Enter a parse tree produced by the {@code falsePrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrimaryFalseLabel(flaskParser.PrimaryFalseLabelContext ctx);
+	void enterFalsePrimary(flaskParser.FalsePrimaryContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code primaryFalseLabel}
+	 * Exit a parse tree produced by the {@code falsePrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrimaryFalseLabel(flaskParser.PrimaryFalseLabelContext ctx);
+	void exitFalsePrimary(flaskParser.FalsePrimaryContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code primaryNoneLabel}
+	 * Enter a parse tree produced by the {@code nonePrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrimaryNoneLabel(flaskParser.PrimaryNoneLabelContext ctx);
+	void enterNonePrimary(flaskParser.NonePrimaryContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code primaryNoneLabel}
+	 * Exit a parse tree produced by the {@code nonePrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrimaryNoneLabel(flaskParser.PrimaryNoneLabelContext ctx);
+	void exitNonePrimary(flaskParser.NonePrimaryContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code primaryParenLabel}
+	 * Enter a parse tree produced by the {@code parenPrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrimaryParenLabel(flaskParser.PrimaryParenLabelContext ctx);
+	void enterParenPrimary(flaskParser.ParenPrimaryContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code primaryParenLabel}
+	 * Exit a parse tree produced by the {@code parenPrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrimaryParenLabel(flaskParser.PrimaryParenLabelContext ctx);
+	void exitParenPrimary(flaskParser.ParenPrimaryContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code primaryListLabel}
+	 * Enter a parse tree produced by the {@code listPrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrimaryListLabel(flaskParser.PrimaryListLabelContext ctx);
+	void enterListPrimary(flaskParser.ListPrimaryContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code primaryListLabel}
+	 * Exit a parse tree produced by the {@code listPrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrimaryListLabel(flaskParser.PrimaryListLabelContext ctx);
+	void exitListPrimary(flaskParser.ListPrimaryContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code primaryDictLabel}
+	 * Enter a parse tree produced by the {@code dictPrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrimaryDictLabel(flaskParser.PrimaryDictLabelContext ctx);
+	void enterDictPrimary(flaskParser.DictPrimaryContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code primaryDictLabel}
+	 * Exit a parse tree produced by the {@code dictPrimary}
 	 * labeled alternative in {@link flaskParser#primary}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrimaryDictLabel(flaskParser.PrimaryDictLabelContext ctx);
+	void exitDictPrimary(flaskParser.DictPrimaryContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code trailerCallLabel}
-	 * labeled alternative in {@link flaskParser#trailer}.
+	 * Enter a parse tree produced by {@link flaskParser#trailer}.
 	 * @param ctx the parse tree
 	 */
-	void enterTrailerCallLabel(flaskParser.TrailerCallLabelContext ctx);
+	void enterTrailer(flaskParser.TrailerContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code trailerCallLabel}
-	 * labeled alternative in {@link flaskParser#trailer}.
+	 * Exit a parse tree produced by {@link flaskParser#trailer}.
 	 * @param ctx the parse tree
 	 */
-	void exitTrailerCallLabel(flaskParser.TrailerCallLabelContext ctx);
+	void exitTrailer(flaskParser.TrailerContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code trailerSubscriptLabel}
-	 * labeled alternative in {@link flaskParser#trailer}.
+	 * Enter a parse tree produced by {@link flaskParser#argumentList}.
 	 * @param ctx the parse tree
 	 */
-	void enterTrailerSubscriptLabel(flaskParser.TrailerSubscriptLabelContext ctx);
+	void enterArgumentList(flaskParser.ArgumentListContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code trailerSubscriptLabel}
-	 * labeled alternative in {@link flaskParser#trailer}.
+	 * Exit a parse tree produced by {@link flaskParser#argumentList}.
 	 * @param ctx the parse tree
 	 */
-	void exitTrailerSubscriptLabel(flaskParser.TrailerSubscriptLabelContext ctx);
+	void exitArgumentList(flaskParser.ArgumentListContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code trailerAttrLabel}
-	 * labeled alternative in {@link flaskParser#trailer}.
+	 * Enter a parse tree produced by {@link flaskParser#argument}.
 	 * @param ctx the parse tree
 	 */
-	void enterTrailerAttrLabel(flaskParser.TrailerAttrLabelContext ctx);
+	void enterArgument(flaskParser.ArgumentContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code trailerAttrLabel}
-	 * labeled alternative in {@link flaskParser#trailer}.
+	 * Exit a parse tree produced by {@link flaskParser#argument}.
 	 * @param ctx the parse tree
 	 */
-	void exitTrailerAttrLabel(flaskParser.TrailerAttrLabelContext ctx);
+	void exitArgument(flaskParser.ArgumentContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code argumentListLabel}
-	 * labeled alternative in {@link flaskParser#argumentList}.
+	 * Enter a parse tree produced by {@link flaskParser#ign}.
 	 * @param ctx the parse tree
 	 */
-	void enterArgumentListLabel(flaskParser.ArgumentListLabelContext ctx);
+	void enterIgn(flaskParser.IgnContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code argumentListLabel}
-	 * labeled alternative in {@link flaskParser#argumentList}.
+	 * Exit a parse tree produced by {@link flaskParser#ign}.
 	 * @param ctx the parse tree
 	 */
-	void exitArgumentListLabel(flaskParser.ArgumentListLabelContext ctx);
+	void exitIgn(flaskParser.IgnContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code argumentKeywordLabel}
-	 * labeled alternative in {@link flaskParser#argument}.
+	 * Enter a parse tree produced by {@link flaskParser#listLiteral}.
 	 * @param ctx the parse tree
 	 */
-	void enterArgumentKeywordLabel(flaskParser.ArgumentKeywordLabelContext ctx);
+	void enterListLiteral(flaskParser.ListLiteralContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code argumentKeywordLabel}
-	 * labeled alternative in {@link flaskParser#argument}.
+	 * Exit a parse tree produced by {@link flaskParser#listLiteral}.
 	 * @param ctx the parse tree
 	 */
-	void exitArgumentKeywordLabel(flaskParser.ArgumentKeywordLabelContext ctx);
+	void exitListLiteral(flaskParser.ListLiteralContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code argumentPositionalLabel}
-	 * labeled alternative in {@link flaskParser#argument}.
+	 * Enter a parse tree produced by {@link flaskParser#dictLiteral}.
 	 * @param ctx the parse tree
 	 */
-	void enterArgumentPositionalLabel(flaskParser.ArgumentPositionalLabelContext ctx);
+	void enterDictLiteral(flaskParser.DictLiteralContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code argumentPositionalLabel}
-	 * labeled alternative in {@link flaskParser#argument}.
+	 * Exit a parse tree produced by {@link flaskParser#dictLiteral}.
 	 * @param ctx the parse tree
 	 */
-	void exitArgumentPositionalLabel(flaskParser.ArgumentPositionalLabelContext ctx);
+	void exitDictLiteral(flaskParser.DictLiteralContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code ignLabel}
-	 * labeled alternative in {@link flaskParser#ign}.
+	 * Enter a parse tree produced by {@link flaskParser#dictEntry}.
 	 * @param ctx the parse tree
 	 */
-	void enterIgnLabel(flaskParser.IgnLabelContext ctx);
+	void enterDictEntry(flaskParser.DictEntryContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code ignLabel}
-	 * labeled alternative in {@link flaskParser#ign}.
+	 * Exit a parse tree produced by {@link flaskParser#dictEntry}.
 	 * @param ctx the parse tree
 	 */
-	void exitIgnLabel(flaskParser.IgnLabelContext ctx);
+	void exitDictEntry(flaskParser.DictEntryContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code listLiteralLabel}
-	 * labeled alternative in {@link flaskParser#listLiteral}.
+	 * Enter a parse tree produced by {@link flaskParser#dotted_name}.
 	 * @param ctx the parse tree
 	 */
-	void enterListLiteralLabel(flaskParser.ListLiteralLabelContext ctx);
+	void enterDotted_name(flaskParser.Dotted_nameContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code listLiteralLabel}
-	 * labeled alternative in {@link flaskParser#listLiteral}.
+	 * Exit a parse tree produced by {@link flaskParser#dotted_name}.
 	 * @param ctx the parse tree
 	 */
-	void exitListLiteralLabel(flaskParser.ListLiteralLabelContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code dictLiteralLabel}
-	 * labeled alternative in {@link flaskParser#dictLiteral}.
-	 * @param ctx the parse tree
-	 */
-	void enterDictLiteralLabel(flaskParser.DictLiteralLabelContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code dictLiteralLabel}
-	 * labeled alternative in {@link flaskParser#dictLiteral}.
-	 * @param ctx the parse tree
-	 */
-	void exitDictLiteralLabel(flaskParser.DictLiteralLabelContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code dictEntryLabel}
-	 * labeled alternative in {@link flaskParser#dictEntry}.
-	 * @param ctx the parse tree
-	 */
-	void enterDictEntryLabel(flaskParser.DictEntryLabelContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code dictEntryLabel}
-	 * labeled alternative in {@link flaskParser#dictEntry}.
-	 * @param ctx the parse tree
-	 */
-	void exitDictEntryLabel(flaskParser.DictEntryLabelContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code dottedNameLabel}
-	 * labeled alternative in {@link flaskParser#dotted_name}.
-	 * @param ctx the parse tree
-	 */
-	void enterDottedNameLabel(flaskParser.DottedNameLabelContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code dottedNameLabel}
-	 * labeled alternative in {@link flaskParser#dotted_name}.
-	 * @param ctx the parse tree
-	 */
-	void exitDottedNameLabel(flaskParser.DottedNameLabelContext ctx);
+	void exitDotted_name(flaskParser.Dotted_nameContext ctx);
 }

@@ -2,7 +2,7 @@ package AST_H_C;
 
 import java.util.List;
 
-public class CSS_Style extends HtmlElement {
+public class CSS_Style extends HtmlElement{
 
     private List<CSSRuleSet> ruleSets;
 
@@ -21,8 +21,8 @@ public class CSS_Style extends HtmlElement {
 
     @Override
     public String toString() {
-        return "CSS_Style{" +
-                "ruleSets=" + ruleSets +
-                '}';
+        return "\nCSS_Style{" +
+                "\n \truleSets=" + ruleSets +
+                "\n}";
     }
 }

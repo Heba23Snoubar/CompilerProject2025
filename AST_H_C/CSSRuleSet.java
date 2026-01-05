@@ -2,7 +2,7 @@ package AST_H_C;
 
 import java.util.List;
 
-public class CSSRuleSet  extends Node {
+public class CSSRuleSet  extends Node{
     private String selector;
     private List<CssProperty> properties;
 
@@ -32,9 +32,9 @@ public class CSSRuleSet  extends Node {
     public String toString() {
         return "CSSRuleSet{" +
 
-                ", properties=" + properties +
-                ", Name='" + Name + '\'' +
-                ", numberOfLine=" + numberOfLine +
+                "\n, Name='" + Name + '\'' +
+                "\n, numberOfLine=" + numberOfLine +
+                "\n\t, properties=" + properties +
                 '}';
     }
 }

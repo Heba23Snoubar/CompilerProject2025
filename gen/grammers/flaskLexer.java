@@ -1,4 +1,4 @@
-// Generated from C:/Users/Heba2005/OneDrive/سطح المكتب/compiler2/grammers/flaskLexer.g4 by ANTLR 4.13.2
+// Generated from C:/Users/techrepair/IdeaProjects/compiler2/compiler2/grammers/flaskLexer.g4 by ANTLR 4.13.2
 package grammers;
 
     import java.util.LinkedList;
@@ -130,16 +130,12 @@ public class flaskLexer extends Lexer {
 	        Token t = super.nextToken();
 
 	        if (t.getType() == EOF) {
-
-	            // ✅ إذا آخر توكن ليس NEWLINE، أضف NEWLINE وهمي قبل إنهاء الملف
 	            if (!pendingTokens.isEmpty()) {
-	                // لا شيء
+
 	            } else {
-	                // إنشاء NEWLINE وهمي
+
 	                pendingTokens.add(createToken(NEWLINE, "\n"));
 	            }
-
-	            // الآن أخرج كل الـ DEDENTs
 	            while (indentLevels.size() > 1) {
 	                indentLevels.pop();
 	                pendingTokens.add(createToken(DEDENT, ""));
@@ -271,7 +267,7 @@ public class flaskLexer extends Lexer {
 			                if (last >= 0 && last < txt.length() - 1)
 			                    indentation = txt.substring(last + 1);
 
-			                String normalized = indentation
+			                String normalized = indentation //tap=4
 			                        .replace("\t", "    ")
 			                        .replace("\u00A0", " ")
 			                        .replace("\u2007", " ")
